@@ -1,5 +1,8 @@
 import React from 'react';
 
+import plus from '../images/icon-plus.png';
+import minus from '../images/icon-minus.png';
+
 class Counter extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -21,10 +24,16 @@ class Counter extends React.PureComponent {
 
     return <div className="counter">
       <img src={image} />
-      <span>{ count }</span>
-      { label && <span>{ label }</span>}
-      <button onClick={this.update(1)}>+</button>
-      <button onClick={this.update(-1)}>-</button>
+      <span>
+        { label
+          ? `${count} ${label}`
+          : count
+        }
+      </span>
+      <div className="buttons">
+        <img src={plus} onClick={this.update(1)} />
+        <img src={minus} onClick={this.update(-1)} />
+      </div>
     </div>;
   }
 }

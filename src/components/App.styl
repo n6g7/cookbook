@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700')
+
 bg-color = rgb(94, 103, 127)
 col-1 = rgb(125, 129, 211)
 col-gray = rgb(230, 230, 237)
@@ -21,6 +23,8 @@ container()
 body
   background: bg-color
   color: white
+  font-family: 'Droid Serif', serif
+  font-size: 14px
   margin: 0
 
 section
@@ -53,6 +57,7 @@ section
 
     h3
       color: col-1
+      font-size: 1.2em
       text-align: center
       margin: (2 * grid-size) 0 grid-size
 
@@ -67,6 +72,8 @@ section
         border: none
         color: white
         flex-grow: 1
+        font-family: inherit
+        font-size: 1em
 
 .counter-row
   display: flex
@@ -76,11 +83,20 @@ section
   .counter
     align-items: center
     background: col-gray
+    color: #333333
     display: flex
     flex-flow: row nowrap
     flex-grow: 1
     height: 2.5 * grid-size
     justify-content: space-between
+    padding: 0 (grid-size / 2)
 
     &:not(:last-child)
       margin-right: (grid-size / 2)
+
+    .buttons
+      display: flex
+      flex-flow: column nowrap
+
+      img
+        margin: 1px 0
