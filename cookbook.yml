@@ -1,14 +1,46 @@
 ---
 
 ingredients:
-  - concombre
-  - tomate
-  - riz
-  - thon
-  - feta
-  - chorizo
-  - oeuf
-  - mozarella
+  - name: concombre
+    category: vegetables
+    type: u
+    meat: no
+    cheese: no
+  - name: tomate
+    category: vegetables
+    type: u
+    meat: no
+    cheese: no
+  - name: riz
+    category: vegetables
+    type: g
+    meat: no
+    cheese: no
+  - name: thon
+    category: carbohydrates
+    type: g
+    meat: yes
+    cheese: no
+  - name: feta
+    category: carbohydrates
+    type: g
+    meat: no
+    cheese: no
+  - name: chorizo
+    category: carbohydrates
+    type: g
+    meat: yes
+    cheese: no
+  - name: oeuf
+    category: meat and fish
+    type: u
+    meat: no
+    cheese: no
+  - name: mozarella
+    category: meat and fish
+    type: g
+    meat: no
+    cheese: yes
 
 recipes:
   - name: Salade de concombres

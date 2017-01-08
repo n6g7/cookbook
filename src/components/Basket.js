@@ -5,24 +5,36 @@ import '../style/Basket.styl';
 
 class Basket extends React.PureComponent {
   render() {
+    const { ingredients } = this.props;
+
+    const categories = ingredients.reduce((acc, ing) => {
+      if (!(ing.category in acc)) acc[ing.category] = [];
+      acc[ing.category].push(ing);
+      return acc;
+    }, {});
+
+    const elements = [];
+
+    for (let category in categories) {
+      const ingredients = categories[category];
+
+      elements.push(<h3>{category}</h3>);
+      elements.push(<ul>
+        {ingredients.map(i =>
+          <Ingredient name={i.name} type={i.type} quantity="2" />
+        )}
+      </ul>);
+    }
+
     return <aside>
       <h2>Groceries list</h2>
-      <h3>Vegetables</h3>
-      <ul>
-        <Ingredient name="Tomatoes" type="u" quantity="2" />
-        <Ingredient name="Cucumber" type="u" quantity="1" />
-        <Ingredient name="Courgette" type="u" quantity="1" />
-      </ul>
-      <h3>Carbohydrates</h3>
-      <ul>
-        <Ingredient name="Rice" type="u" quantity="1" />
-        <Ingredient name="Pastas" type="u" quantity="1" />
-        <Ingredient name="Potatoes" type="u" quantity="1" />
-      </ul>
+      {elements.map(e => e)}
     </aside>;
   }
 }
 
-Basket.propTypes = {};
+Basket.propTypes = {
+  ingredients: React.PropTypes.array.isRequired
+};
 
 export default Basket;
