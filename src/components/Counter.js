@@ -14,7 +14,7 @@ class Counter extends React.PureComponent {
 
   update(delta) {
     return () => this.setState({
-      count: this.state.count + delta
+      count: Math.max(this.state.count + delta, 0)
     });
   }
 
