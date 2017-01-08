@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { homepage, version } from '../../package.json';
 import Recipe from './Recipe';
 import './App.styl';
 
@@ -18,6 +19,11 @@ class App extends React.PureComponent {
         <Recipe/>
         <Recipe/>
       </section>
+      <footer>
+        <a href={homepage} target="blank">
+          v{ version }
+        </a>
+      </footer>
     </div>;
   }
 }

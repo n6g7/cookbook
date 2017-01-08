@@ -18,6 +18,11 @@ module.exports = {
         test: /\.png$/,
         exclude: /node_modules/,
         loader: 'url!img'
+      },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loader: 'json'
       }
     ]
   },
