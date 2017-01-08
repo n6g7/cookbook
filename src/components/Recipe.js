@@ -3,9 +3,9 @@ import React from 'react';
 import Counter from './Counter';
 import recipe from '../images/recipe.png';
 
-import servings from '../images/icon-servings.png';
-import vegetarian from '../images/icon-vegetarian.png';
-import cheesefree from '../images/icon-cheesefree.png';
+import servings from '../images/icon-servings.svg';
+import vegetarian from '../images/icon-vegetarian.svg';
+import cheesefree from '../images/icon-cheesefree.svg';
 
 class Recipe extends React.PureComponent {
   render() {

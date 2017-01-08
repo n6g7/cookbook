@@ -1,7 +1,7 @@
 import React from 'react';
 
-import plus from '../images/icon-plus.png';
-import minus from '../images/icon-minus.png';
+import plus from '../images/icon-plus.svg';
+import minus from '../images/icon-minus.svg';
 
 class Counter extends React.PureComponent {
   constructor(props) {
