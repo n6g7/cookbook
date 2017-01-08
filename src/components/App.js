@@ -2,25 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { homepage, version } from '../../package.json';
-import Recipe from './Recipe';
-import './App.styl';
+import Basket from './Basket';
+import RecipeList from './RecipeList';
+import '../style/App.styl';
 
 import cookbook from '../../cookbook.yml';
 
 class App extends React.PureComponent {
   render() {
     return <div id="cookbook">
-      <header>
-        <h1>Cookbook</h1>
-      </header>
-      <section>
-        { cookbook.recipes.map(recipe =>
-          <Recipe
-            image={recipe.image}
-            name={recipe.name}
-          />
-        )}
-      </section>
+      <main>
+        <Basket />
+        <RecipeList recipes={cookbook.recipes} />
+      </main>
       <footer>
         <a href={homepage} target="blank">
           v{ version }

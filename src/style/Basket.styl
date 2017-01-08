@@ -1,0 +1,41 @@
+@import './vars.styl'
+
+line-height = 1.5 * grid-size
+
+line(padding)
+  border-top: 2px solid col-gray-light
+  height: line-height
+  line-height: line-height
+  padding: 0 padding
+
+aside
+  background: white
+  color: col-gray-dark
+  display: flex
+  flex-flow: column nowrap
+  padding: 0 0 grid-size
+  width: 12 * grid-size
+
+  h2
+    color: col-1
+    font-size: 1.2em
+    margin: 0
+    padding: grid-size
+
+  h3
+    line(grid-size)
+    font-size: 1em
+    margin: 0
+
+  ul
+    display: flex
+    flex-flow: column nowrap
+    list-style: none
+    margin: 0
+    padding: 0 grid-size
+
+    li
+      line(0)
+
+    &:last-of-type
+      border-bottom: 2px solid col-gray-light

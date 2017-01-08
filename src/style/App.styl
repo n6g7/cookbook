@@ -1,0 +1,31 @@
+@import './vars.styl'
+
+body
+  background: bg-color
+  color: white
+  font-family: 'Droid Serif', serif
+  font-size: 14px
+  margin: 0
+  padding: (2 * grid-size) (3 * grid-size)
+
+#cookbook
+  main
+    align-items: flex-start
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+
+    aside
+      margin-right: 2 * grid-size
+      position: sticky
+      top: 2 * grid-size
+
+    section
+      flex-grow: 1
+
+  & > footer
+    padding: grid-size 0
+    text-align: center
+
+    a
+      color: white

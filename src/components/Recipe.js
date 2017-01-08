@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Counter from './Counter';
-
 import servings from '../images/icon-servings.svg';
 import vegetarian from '../images/icon-vegetarian.svg';
 import cheesefree from '../images/icon-cheesefree.svg';
+import '../style/Recipe.styl';
 
 class Recipe extends React.PureComponent {
   render() {
@@ -22,9 +22,6 @@ class Recipe extends React.PureComponent {
         <Counter image={cheesefree} />
         <Counter image={vegetarian} />
       </div>
-      <footer>
-        <button>Add to list</button>
-      </footer>
     </article>;
   }
 }
