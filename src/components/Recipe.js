@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Counter from './Counter';
-import recipe from '../images/recipe.png';
 
 import servings from '../images/icon-servings.svg';
 import vegetarian from '../images/icon-vegetarian.svg';
@@ -9,11 +8,13 @@ import cheesefree from '../images/icon-cheesefree.svg';
 
 class Recipe extends React.PureComponent {
   render() {
+    const { image, name } = this.props;
+
     return <article>
       <header>
-        <img src={recipe} />
+        <img src={image} />
       </header>
-      <h3>Pâtes à la crème au champignons</h3>
+      <h3>{ name }</h3>
       <div className="counter-row">
         <Counter label="total servings" image={servings} />
       </div>
@@ -28,6 +29,9 @@ class Recipe extends React.PureComponent {
   }
 }
 
-Recipe.propTypes = {};
+Recipe.propTypes = {
+  image: React.PropTypes.string.isRequired,
+  name: React.PropTypes.string.isRequired
+};
 
 export default Recipe;

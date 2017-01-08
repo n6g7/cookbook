@@ -1,0 +1,37 @@
+---
+
+ingredients:
+  - concombre
+  - tomate
+  - riz
+  - thon
+  - feta
+  - chorizo
+  - oeuf
+  - mozarella
+
+recipes:
+  - name: Salade de concombres
+    image: http://i.imgur.com/bpfPt5O.png
+    ingredients:
+      - name: concombre
+        quantity: 1
+      - name: tomate
+        quantity: 6
+      - name: riz
+        quantity: 3
+      - name: thon
+        quantity: 1
+      - name: feta
+        quantity: 1
+  - name: Pizza
+    image: http://i.imgur.com/bpfPt5O.png
+    ingredients:
+      - name: tomate
+        quantity: 2
+      - name: chorizo
+        quantity: 1
+      - name: oeuf
+        quantity: 1
+      - name: mozarella
+        quantity: 1

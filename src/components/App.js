@@ -5,6 +5,8 @@ import { homepage, version } from '../../package.json';
 import Recipe from './Recipe';
 import './App.styl';
 
+import cookbook from '../../cookbook.yml';
+
 class App extends React.PureComponent {
   render() {
     return <div id="cookbook">
@@ -12,12 +14,12 @@ class App extends React.PureComponent {
         <h1>Cookbook</h1>
       </header>
       <section>
-        <Recipe/>
-        <Recipe/>
-        <Recipe/>
-        <Recipe/>
-        <Recipe/>
-        <Recipe/>
+        { cookbook.recipes.map(recipe =>
+          <Recipe
+            image={recipe.image}
+            name={recipe.name}
+          />
+        )}
       </section>
       <footer>
         <a href={homepage} target="blank">

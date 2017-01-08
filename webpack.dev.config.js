@@ -30,6 +30,11 @@ module.exports = Object.assign({}, baseConfig, {
         test: /\.json$/,
         exclude: /node_modules/,
         loader: 'json'
+      },
+      {
+        test: /\.ya?ml$/,
+        exclude: /node_modules/,
+        loader: 'json!yaml'
       }
     ]
   },
