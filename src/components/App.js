@@ -6,14 +6,14 @@ import Basket from './Basket';
 import RecipeList from './RecipeList';
 import '../style/App.styl';
 
-import cookbook from '../../cookbook.yml';
-
 class App extends React.PureComponent {
   render() {
+    const { ingredients, recipes } = this.props;
+
     return <div id="cookbook">
       <main>
-        <Basket ingredients={cookbook.ingredients} />
-        <RecipeList recipes={cookbook.recipes} />
+        <Basket ingredients={ingredients} />
+        <RecipeList recipes={recipes} />
       </main>
       <footer>
         <a href={homepage} target="blank">
@@ -24,11 +24,17 @@ class App extends React.PureComponent {
   }
 }
 
-App.propTypes = {};
+App.propTypes = {
+  ingredients: React.PropTypes.array.isRequired,
+  recipes: React.PropTypes.array.isRequired
+};
 
 export default App;
 
-const mapStateToProps = () => ({});
+const mapStateToProps = ({ ingredients, recipes }) => ({
+  ingredients,
+  recipes
+});
 
 const mapDispatchToProps = {};
 

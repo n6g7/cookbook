@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-// import subreducer from './subreducer';
+import ingredients from './ingredients';
+import recipes from './recipes';
 
 export default combineReducers({
-  // subreducer
+  ingredients,
+  recipes
 });
