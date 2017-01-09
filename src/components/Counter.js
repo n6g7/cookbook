@@ -5,30 +5,22 @@ import minus from '../images/icon-minus.svg';
 import '../style/Counter.styl';
 
 class Counter extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      count: 0
+  update(delta) {
+    return () => {
+      const { onChange, value } = this.props;
+      return onChange(value + delta);
     };
   }
 
-  update(delta) {
-    return () => this.setState({
-      count: Math.max(this.state.count + delta, 0)
-    });
-  }
-
   render() {
-    const { image, label } = this.props;
-    const { count } = this.state;
+    const { image, label, value } = this.props;
 
     return <div className="counter">
       <img src={image} />
       <span>
         { label
-          ? `${count} ${label}`
-          : count
+          ? `${value} ${label}`
+          : value
         }
       </span>
       <div className="buttons">
@@ -41,7 +33,13 @@ class Counter extends React.PureComponent {
 
 Counter.propTypes = {
   image: React.PropTypes.string.isRequired,
-  label: React.PropTypes.string
+  label: React.PropTypes.string,
+  value: React.PropTypes.number.isRequired,
+  onChange: React.PropTypes.func.isRequired
+};
+
+Counter.defaultProps = {
+  value: 0
 };
 
 export default Counter;

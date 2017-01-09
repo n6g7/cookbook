@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Recipe from './Recipe';
+import { RecipeContainer } from './Recipe';
 import '../style/RecipeList.styl';
 
 class RecipeList extends React.PureComponent {
@@ -8,10 +8,14 @@ class RecipeList extends React.PureComponent {
     const { recipes } = this.props;
 
     return <section>
-      { recipes.map(recipe =>
-        <Recipe
+      { recipes.map((recipe, index) =>
+        <RecipeContainer
           image={recipe.image}
+          index={index}
           name={recipe.name}
+          servings={recipe.servings}
+          cheesefreeServings={recipe.cheesefreeServings}
+          veggieServings={recipe.veggieServings}
         />
       )}
     </section>;
