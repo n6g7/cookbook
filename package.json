@@ -37,6 +37,7 @@
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.17.0",
     "css-loader": "^0.26.1",
     "eslint": "^3.13.0",
     "eslint-plugin-react": "^6.8.0",
@@ -57,7 +58,8 @@
   "babel": {
     "presets": [
       "es2015",
-      "react"
+      "react",
+      "stage-3"
     ]
   },
   "eslintConfig": {
@@ -70,7 +72,8 @@
     ],
     "parserOptions": {
       "ecmaFeatures": {
-        "jsx": true
+        "jsx": true,
+        "experimentalObjectRestSpread": true
       },
       "ecmaVersion": 6,
       "sourceType": "module"
