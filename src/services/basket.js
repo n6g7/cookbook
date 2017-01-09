@@ -1,9 +1,23 @@
-const getQuantities = recipes =>
+const isMeat = (ingredient, ingredients) =>
+  ingredients.find(i => i.name === ingredient).meat;
+
+const isCheese = (ingredient, ingredients) =>
+  ingredients.find(i => i.name === ingredient).cheese;
+
+const getQuantities = (recipes, ingredients) =>
   recipes.reduce((acc, r) => {
     return r.ingredients.reduce((acc, i) => {
       if (!acc[i.name]) acc[i.name] = 0;
 
       acc[i.name] += i.quantity * r.servings;
+
+      if (r.veggieServings > 0 && isMeat(i.name, ingredients)) {
+        acc[i.name] -= i.quantity * r.veggieServings;
+      }
+      if (r.cheesefreeServings > 0 && isCheese(i.name, ingredients)) {
+        acc[i.name] -= i.quantity * r.cheesefreeServings;
+      }
+
       return acc;
     }, acc);
   }, {});
@@ -24,7 +38,7 @@ const categorize = basket =>
   }, {});
 
 export const buildBasket = (recipes, ingredients) => {
-  const quantities = getQuantities(recipes);
+  const quantities = getQuantities(recipes, ingredients);
   const basket = attachQuantities(ingredients, quantities);
 
   return categorize(basket);
