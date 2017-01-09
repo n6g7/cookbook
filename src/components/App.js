@@ -12,7 +12,7 @@ class App extends React.PureComponent {
 
     return <div id="cookbook">
       <main>
-        <Basket ingredients={ingredients} />
+        <Basket ingredients={ingredients} recipes={recipes} />
         <RecipeList recipes={recipes} />
       </main>
       <footer>

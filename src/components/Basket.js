@@ -1,27 +1,22 @@
 import React from 'react';
 
 import Ingredient from './Ingredient';
+import { buildBasket } from '../services/basket';
 import '../style/Basket.styl';
 
 class Basket extends React.PureComponent {
   render() {
-    const { ingredients } = this.props;
-
-    const categories = ingredients.reduce((acc, ing) => {
-      if (!(ing.category in acc)) acc[ing.category] = [];
-      acc[ing.category].push(ing);
-      return acc;
-    }, {});
+    const { ingredients, recipes } = this.props;
+    const basket = buildBasket(recipes, ingredients);
 
     const elements = [];
-
-    for (let category in categories) {
-      const ingredients = categories[category];
+    for (let category in basket) {
+      const ingredients = basket[category];
 
       elements.push(<h3>{category}</h3>);
       elements.push(<ul>
         {ingredients.map(i =>
-          <Ingredient name={i.name} type={i.type} quantity="2" />
+          <Ingredient name={i.name} type={i.type} quantity={i.quantity} />
         )}
       </ul>);
     }
@@ -34,7 +29,8 @@ class Basket extends React.PureComponent {
 }
 
 Basket.propTypes = {
-  ingredients: React.PropTypes.array.isRequired
+  ingredients: React.PropTypes.array.isRequired,
+  recipes: React.PropTypes.array.isRequired,
 };
 
 export default Basket;
