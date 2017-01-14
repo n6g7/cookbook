@@ -6,10 +6,12 @@
   justify-content: space-between
 
   .name
-    text-transform: capitalize
+    &::first-letter
+      text-transform: uppercase
 
   .quantity
     color: col-1
+    margin-left: 3px
 
     .unit
       color: darken(col-gray-light, 20%)
