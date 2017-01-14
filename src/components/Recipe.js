@@ -53,7 +53,7 @@ class Recipe extends React.PureComponent {
 
 Recipe.propTypes = {
   cheesefreeServings: React.PropTypes.number.isRequired,
-  image: React.PropTypes.string.isRequired,
+  image: React.PropTypes.string,
   index: React.PropTypes.number.isRequired,
   name: React.PropTypes.string.isRequired,
   servings: React.PropTypes.number.isRequired,
