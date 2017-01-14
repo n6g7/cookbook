@@ -13,10 +13,15 @@ class Basket extends React.PureComponent {
     for (let category in basket) {
       const ingredients = basket[category];
 
-      elements.push(<h3>{category}</h3>);
-      elements.push(<ul>
-        {ingredients.map(i =>
-          <Ingredient name={i.name} type={i.type} quantity={i.quantity} />
+      elements.push(<h3 key={`title-${category}`}>{category}</h3>);
+      elements.push(<ul key={`cat-${category}`}>
+        {ingredients.map((i, index) =>
+          <Ingredient
+            name={i.name}
+            type={i.type}
+            quantity={i.quantity}
+            key={`ingredient-${index}`}
+          />
         )}
       </ul>);
     }

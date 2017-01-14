@@ -59,6 +59,12 @@ Recipe.propTypes = {
   veggieServings: React.PropTypes.number.isRequired,
 };
 
+Recipe.defaultProps = {
+  cheesefreeServings: 0,
+  servings: 0,
+  veggieServings: 0
+};
+
 export default Recipe;
 
 const mapStateToProps = () => ({});

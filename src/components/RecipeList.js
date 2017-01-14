@@ -16,6 +16,7 @@ class RecipeList extends React.PureComponent {
           servings={recipe.servings}
           cheesefreeServings={recipe.cheesefreeServings}
           veggieServings={recipe.veggieServings}
+          key={`recipe-${index}`}
         />
       )}
     </section>;
