@@ -38,8 +38,12 @@ class Counter extends React.PureComponent {
         }
       </span>
       <div className="buttons">
-        <img src={plus} onClick={this.update(1)} />
-        <img src={minus} onClick={this.update(-1)} />
+        <button onClick={this.update(1)}>
+          <img src={plus} />
+        </button>
+        <button onClick={this.update(-1)}>
+          <img src={minus} />
+        </button>
       </div>
     </div>;
   }
