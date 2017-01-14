@@ -36,11 +36,13 @@ class Recipe extends React.PureComponent {
       <div className="counter-row">
         <Counter
           image={cheesefreeImage}
+          max={servings}
           onChange={v => setServings(index, v, 'cheesefreeServings')}
           value={cheesefreeServings}
         />
         <Counter
           image={vegetarianImage}
+          max={servings}
           onChange={v => setServings(index, v, 'veggieServings')}
           value={veggieServings}
         />

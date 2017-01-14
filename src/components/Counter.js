@@ -5,10 +5,24 @@ import minus from '../images/icon-minus.svg';
 import '../style/Counter.styl';
 
 class Counter extends React.PureComponent {
+  componentWillReceiveProps(nextProps) {
+    const { max, onChange, value } = nextProps;
+
+    if (max !== undefined && max < value) {
+      onChange(max);
+    }
+  }
+
   update(delta) {
     return () => {
-      const { onChange, value } = this.props;
-      return onChange(value + delta);
+      const { max, onChange, value } = this.props;
+      const newValue = value + delta;
+
+      if (max !== undefined) {
+        if (newValue <= max) return onChange(newValue);
+        else return;
+      }
+      return onChange(newValue);
     };
   }
 
@@ -34,6 +48,7 @@ class Counter extends React.PureComponent {
 Counter.propTypes = {
   image: React.PropTypes.string.isRequired,
   label: React.PropTypes.string,
+  max: React.PropTypes.number,
   value: React.PropTypes.number.isRequired,
   onChange: React.PropTypes.func.isRequired
 };
