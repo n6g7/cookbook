@@ -5,22 +5,24 @@ const isCheese = (ingredient, ingredients) =>
   ingredients.find(i => i.name === ingredient).cheese;
 
 const getQuantities = (recipes, ingredients) =>
-  recipes.reduce((acc, r) => {
-    return r.ingredients.reduce((acc, i) => {
-      if (!acc[i.name]) acc[i.name] = 0;
+  recipes
+    .filter(r => r.servings > 0)
+    .reduce((acc, r) => {
+      return r.ingredients.reduce((acc, i) => {
+        if (!acc[i.name]) acc[i.name] = 0;
 
-      acc[i.name] += i.quantity * r.servings;
+        acc[i.name] += i.quantity * (r.servings || 0);
 
-      if (r.veggieServings > 0 && isMeat(i.name, ingredients)) {
-        acc[i.name] -= i.quantity * r.veggieServings;
-      }
-      if (r.cheesefreeServings > 0 && isCheese(i.name, ingredients)) {
-        acc[i.name] -= i.quantity * r.cheesefreeServings;
-      }
+        if (r.veggieServings > 0 && isMeat(i.name, ingredients)) {
+          acc[i.name] -= i.quantity * (r.veggieServings || 0);
+        }
+        if (r.cheesefreeServings > 0 && isCheese(i.name, ingredients)) {
+          acc[i.name] -= i.quantity * (r.cheesefreeServings || 0);
+        }
 
-      return acc;
-    }, acc);
-  }, {});
+        return acc;
+      }, acc);
+    }, {});
 
 const attachQuantities = (ingredients, quantities) =>
   ingredients
