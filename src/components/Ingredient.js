@@ -7,10 +7,11 @@ class Ingredient extends React.PureComponent {
     const { name, type, quantity } = this.props;
 
     return <li className="ingredient">
-      <span className="title">
-        <span className="name">{name}</span> <span className="type">({type})</span>
+      <span className="name">{name}</span>
+      <span className="quantity">
+        {quantity}
+        <span className="unit">{type}</span>
       </span>
-      <span className="quantity">{quantity}</span>
     </li>;
   }
 }

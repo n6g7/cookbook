@@ -28,7 +28,10 @@ class Basket extends React.PureComponent {
 
     return <aside>
       <h2>Groceries list</h2>
-      {elements.map(e => e)}
+      { elements.length > 0
+        ? elements.map(e => e)
+        : <p>Nothing yet...</p>
+      }
     </aside>;
   }
 }

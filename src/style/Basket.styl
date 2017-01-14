@@ -4,23 +4,31 @@ line-height = 1.5 * grid-size
 
 line(padding)
   border-top: 2px solid col-gray-light
-  height: line-height
+  min-height: line-height
   line-height: line-height
   padding: 0 padding
 
 aside
+  width = 12 * grid-size
+
   background: white
   color: col-gray-dark
   display: flex
   flex-flow: column nowrap
+  min-width: width
   padding: 0 0 grid-size
-  width: 12 * grid-size
+  width: width
 
   h2
     color: col-1
     font-size: 1.2em
     margin: 0
     padding: grid-size
+
+  p
+    font-style: italic
+    margin: 0
+    padding: 0 grid-size
 
   h3
     line(grid-size)
@@ -37,6 +45,9 @@ aside
 
     li
       line(0)
+      align-items: center
+      display: flex
+      flex-flow: row nowrap
 
     &:last-of-type
       border-bottom: 2px solid col-gray-light
