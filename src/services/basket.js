@@ -11,13 +11,13 @@ const getQuantities = (recipes, ingredients) =>
       return r.ingredients.reduce((acc, i) => {
         if (!acc[i.name]) acc[i.name] = 0;
 
-        acc[i.name] += i.quantity * (r.servings || 0);
+        acc[i.name] += i.quantity * (r.servings || 0) / (r.serves || 1);
 
         if (r.veggieServings > 0 && isMeat(i.name, ingredients)) {
-          acc[i.name] -= i.quantity * (r.veggieServings || 0);
+          acc[i.name] -= i.quantity * (r.veggieServings || 0) / (r.serves || 1);
         }
         if (r.cheesefreeServings > 0 && isCheese(i.name, ingredients)) {
-          acc[i.name] -= i.quantity * (r.cheesefreeServings || 0);
+          acc[i.name] -= i.quantity * (r.cheesefreeServings || 0) / (r.serves || 1);
         }
 
         return acc;
@@ -29,7 +29,7 @@ const attachQuantities = (ingredients, quantities) =>
     .filter(i => quantities[i.name])
     .map(i => ({
       ...i,
-      quantity: quantities[i.name]
+      quantity: Math.round(quantities[i.name] * 10) / 10
     }));
 
 const categorize = basket =>
