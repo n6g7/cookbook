@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "deploy": "firebase deploy",
     "dev": "webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js",
     "pretest": "eslint src test --ext js,jsx",
     "test": "jest"

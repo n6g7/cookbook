@@ -3,11 +3,12 @@
 ## Install
 
 ```sh
-npm i
+yarn
 ```
 
 ## How to:
 
- - dev? `npm run dev`
- - build? `npm run build`
- - test? `npm test`
+ - dev? `yarn dev`
+ - build? `yarn build`
+ - test? `yarn test`
+ - deploy? `yarn deploy`
