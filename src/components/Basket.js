@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import Ingredient from './Ingredient';
-import { buildBasket } from '../services/basket';
-import '../style/Basket.styl';
+import Ingredient from './Ingredient'
+import { buildBasket } from '../services/basket'
+import '../style/Basket.styl'
 
 class Basket extends React.PureComponent {
-  render() {
-    const { ingredients, recipes } = this.props;
-    const basket = buildBasket(recipes, ingredients);
+  render () {
+    const { ingredients, recipes } = this.props
+    const basket = buildBasket(recipes, ingredients)
 
-    const elements = [];
+    const elements = []
     for (let category in basket) {
-      const ingredients = basket[category];
+      const ingredients = basket[category]
 
-      elements.push(<h3 key={`title-${category}`}>{category}</h3>);
+      elements.push(<h3 key={`title-${category}`}>{category}</h3>)
       elements.push(<ul key={`cat-${category}`}>
         {ingredients.map((i, index) =>
           <Ingredient
@@ -23,7 +23,7 @@ class Basket extends React.PureComponent {
             key={`ingredient-${index}`}
           />
         )}
-      </ul>);
+      </ul>)
     }
 
     return <aside>
@@ -32,13 +32,13 @@ class Basket extends React.PureComponent {
         ? elements.map(e => e)
         : <p>Nothing yet...</p>
       }
-    </aside>;
+    </aside>
   }
 }
 
 Basket.propTypes = {
   ingredients: React.PropTypes.array.isRequired,
-  recipes: React.PropTypes.array.isRequired,
-};
+  recipes: React.PropTypes.array.isRequired
+}
 
-export default Basket;
+export default Basket

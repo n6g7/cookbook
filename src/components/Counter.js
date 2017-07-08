@@ -1,35 +1,35 @@
-import React from 'react';
+import React from 'react'
 
-import plus from '../images/icon-plus.svg';
-import minus from '../images/icon-minus.svg';
-import '../style/Counter.styl';
+import plus from '../images/icon-plus.svg'
+import minus from '../images/icon-minus.svg'
+import '../style/Counter.styl'
 
 class Counter extends React.PureComponent {
-  componentWillReceiveProps(nextProps) {
-    const { max, onChange, value } = nextProps;
+  componentWillReceiveProps (nextProps) {
+    const { max, onChange, value } = nextProps
 
     if (max !== undefined && max < value) {
-      onChange(max);
+      onChange(max)
     }
   }
 
-  update(delta) {
+  update (delta) {
     return () => {
-      const { max, onChange, value } = this.props;
-      const newValue = value + delta;
+      const { max, onChange, value } = this.props
+      const newValue = value + delta
 
       if (max !== undefined) {
-        if (newValue <= max) return onChange(newValue);
-        else return;
+        if (newValue <= max) return onChange(newValue)
+        else return
       }
-      return onChange(newValue);
-    };
+      return onChange(newValue)
+    }
   }
 
-  render() {
-    const { image, label, value } = this.props;
+  render () {
+    const { image, label, value } = this.props
 
-    return <div className="counter">
+    return <div className='counter'>
       <img src={image} />
       <span>
         { label
@@ -37,7 +37,7 @@ class Counter extends React.PureComponent {
           : value
         }
       </span>
-      <div className="buttons">
+      <div className='buttons'>
         <button onClick={this.update(1)}>
           <img src={plus} />
         </button>
@@ -45,7 +45,7 @@ class Counter extends React.PureComponent {
           <img src={minus} />
         </button>
       </div>
-    </div>;
+    </div>
   }
 }
 
@@ -55,10 +55,10 @@ Counter.propTypes = {
   max: React.PropTypes.number,
   value: React.PropTypes.number.isRequired,
   onChange: React.PropTypes.func.isRequired
-};
+}
 
 Counter.defaultProps = {
   value: 0
-};
+}
 
-export default Counter;
+export default Counter

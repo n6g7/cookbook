@@ -7,7 +7,7 @@
     "build": "webpack",
     "deploy": "firebase deploy",
     "dev": "webpack-dashboard -- webpack-dev-server",
-    "pretest": "eslint src test --ext js,jsx",
+    "pretest": "standard",
     "test": "jest"
   },
   "repository": {
@@ -48,6 +48,7 @@
     "jest": "^20.0.4",
     "json-loader": "^0.5.4",
     "react-hot-loader": "^1.3.1",
+    "standard": "^10.0.2",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
@@ -62,26 +63,6 @@
       "es2015",
       "react",
       "stage-3"
-    ]
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true,
-        "experimentalObjectRestSpread": true
-      },
-      "ecmaVersion": 6,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "react"
     ]
   }
 }

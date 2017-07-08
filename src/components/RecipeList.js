@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import { RecipeContainer } from './Recipe';
-import '../style/RecipeList.styl';
+import { RecipeContainer } from './Recipe'
+import '../style/RecipeList.styl'
 
 class RecipeList extends React.PureComponent {
-  render() {
-    const { recipes } = this.props;
+  render () {
+    const { recipes } = this.props
 
     return <section>
       { recipes.map((recipe, index) =>
@@ -19,12 +19,12 @@ class RecipeList extends React.PureComponent {
           key={`recipe-${index}`}
         />
       )}
-    </section>;
+    </section>
   }
 }
 
 RecipeList.propTypes = {
   recipes: React.PropTypes.array.isRequired
-};
+}
 
-export default RecipeList;
+export default RecipeList

@@ -1,28 +1,28 @@
 const isMeat = (ingredient, ingredients) =>
-  ingredients.find(i => i.name === ingredient).meat;
+  ingredients.find(i => i.name === ingredient).meat
 
 const isCheese = (ingredient, ingredients) =>
-  ingredients.find(i => i.name === ingredient).cheese;
+  ingredients.find(i => i.name === ingredient).cheese
 
 const getQuantities = (recipes, ingredients) =>
   recipes
     .filter(r => r.servings > 0)
     .reduce((acc, r) => {
       return r.ingredients.reduce((acc, i) => {
-        if (!acc[i.name]) acc[i.name] = 0;
+        if (!acc[i.name]) acc[i.name] = 0
 
-        acc[i.name] += i.quantity * (r.servings || 0) / (r.serves || 1);
+        acc[i.name] += i.quantity * (r.servings || 0) / (r.serves || 1)
 
         if (r.veggieServings > 0 && isMeat(i.name, ingredients)) {
-          acc[i.name] -= i.quantity * (r.veggieServings || 0) / (r.serves || 1);
+          acc[i.name] -= i.quantity * (r.veggieServings || 0) / (r.serves || 1)
         }
         if (r.cheesefreeServings > 0 && isCheese(i.name, ingredients)) {
-          acc[i.name] -= i.quantity * (r.cheesefreeServings || 0) / (r.serves || 1);
+          acc[i.name] -= i.quantity * (r.cheesefreeServings || 0) / (r.serves || 1)
         }
 
-        return acc;
-      }, acc);
-    }, {});
+        return acc
+      }, acc)
+    }, {})
 
 const attachQuantities = (ingredients, quantities) =>
   ingredients
@@ -30,18 +30,18 @@ const attachQuantities = (ingredients, quantities) =>
     .map(i => ({
       ...i,
       quantity: Math.round(quantities[i.name] * 10) / 10
-    }));
+    }))
 
 const categorize = basket =>
   basket.reduce((acc, i) => {
-    if (!(i.category in acc)) acc[i.category] = [];
-    acc[i.category].push(i);
-    return acc;
-  }, {});
+    if (!(i.category in acc)) acc[i.category] = []
+    acc[i.category].push(i)
+    return acc
+  }, {})
 
 export const buildBasket = (recipes, ingredients) => {
-  const quantities = getQuantities(recipes, ingredients);
-  const basket = attachQuantities(ingredients, quantities);
+  const quantities = getQuantities(recipes, ingredients)
+  const basket = attachQuantities(ingredients, quantities)
 
-  return categorize(basket);
-};
+  return categorize(basket)
+}
