@@ -1,42 +1,58 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel'
-      },
-      {
-        test: /\.styl(us)?$/,
-        exclude: /node_modules/,
-        loader: 'style!css!stylus'
-      },
-      {
-        test: /\.(png|svg)$/,
-        exclude: /node_modules/,
-        loader: 'url!img'
-      },
-      {
-        test: /\.json$/,
-        exclude: /node_modules/,
-        loader: 'json'
-      },
-      {
-        test: /\.ya?ml$/,
-        exclude: /node_modules/,
-        loader: 'json!yaml'
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
+  context: path.resolve(__dirname, 'src'),
+  entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          'babel-loader'
+        ]
+      },
+      {
+        test: /\.styl(us)?$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'stylus-loader'
+        ]
+      },
+      {
+        test: /\.(png|svg)$/,
+        exclude: /node_modules/,
+        use: [
+          'url-loader',
+          'img-loader'
+        ]
+      },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        use: [
+          'json-loader'
+        ]
+      },
+      {
+        test: /\.ya?ml$/,
+        exclude: /node_modules/,
+        use: [
+          'json-loader',
+          'yaml-loader'
+        ]
+      }
+    ]
+  },
+  devServer: {
+    contentBase: './dist',
+    historyApiFallback: true
   }
 }
