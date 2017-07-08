@@ -1,18 +1,16 @@
-import { types } from './recipes.actions'
+import { types } from '@actions/recipes'
 
-const INITIAL_STATE = []
+const initialState = {
+  list: []
+}
 
-export default function (state = INITIAL_STATE, action) {
+export default function recipeReducer (state = initialState, action) {
   switch (action.type) {
-    case types.SET_SERVINGS:
-      return state.map((recipe, idx) => {
-        if (idx === action.index) {
-          return {
-            ...recipe,
-            [action.servingType]: Math.max(action.value, 0)
-          }
-        } else return recipe
-      })
+    case types.SYNC_RECIPES:
+      return {
+        ...state,
+        list: action.recipes
+      }
     default:
       return state
   }
