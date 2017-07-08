@@ -5526,13 +5526,13 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-saga-firebase@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/redux-saga-firebase/-/redux-saga-firebase-0.2.0.tgz#9db66744cdd3903c6eafdc34625b72491b5b7e7b"
+redux-saga-firebase@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/redux-saga-firebase/-/redux-saga-firebase-0.3.0.tgz#1bdefa51996249f4ee8c109b737d0cd07dccee86"
   dependencies:
-    redux-saga "^0.15.3"
+    redux-saga "^0.15.4"
 
-redux-saga@^0.15.3, redux-saga@^0.15.4:
+redux-saga@^0.15.4:
   version "0.15.4"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.15.4.tgz#27982a947280053b7ecbb5d3170c837a5fe6b261"
 
