@@ -752,6 +752,14 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
+babel-polyfill@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+  dependencies:
+    babel-runtime "^6.22.0"
+    core-js "^2.4.0"
+    regenerator-runtime "^0.10.0"
+
 babel-preset-env@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.6.0.tgz#2de1c782a780a0a5d605d199c957596da43c44e4"
@@ -5517,6 +5525,16 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
+
+redux-saga-firebase@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/redux-saga-firebase/-/redux-saga-firebase-0.2.0.tgz#9db66744cdd3903c6eafdc34625b72491b5b7e7b"
+  dependencies:
+    redux-saga "^0.15.3"
+
+redux-saga@^0.15.3, redux-saga@^0.15.4:
+  version "0.15.4"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.15.4.tgz#27982a947280053b7ecbb5d3170c837a5fe6b261"
 
 redux@^3.6.0:
   version "3.7.1"

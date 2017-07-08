@@ -2,11 +2,16 @@ const path = require('path')
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
+  entry: ['babel-polyfill', './index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
+  },
+  resolve: {
+    alias: {
+      '@actions': path.resolve(__dirname, 'src/redux/actions')
+    }
   },
   module: {
     rules: [
