@@ -1,0 +1,71 @@
+{
+  "rules": {
+    "categories": {
+      ".read": true,
+      ".write": false,
+
+      "$cid": {
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        }
+      }
+    },
+
+    "ingredients": {
+      ".read": true,
+      ".write": false,
+
+      "$iid": {
+        "category": {
+          ".validate": "root.child('categories/' + newData.val()).exists()"
+        },
+        "cheese": {
+          ".validate": "newData.isBoolean()"
+        },
+        "meat": {
+          ".validate": "newData.isBoolean()"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "unit": {
+          ".validate": "root.child('units/' + newData.val()).exists()"
+        }
+      }
+    },
+
+    "recipes": {
+      "$rid": {
+        ".read": true,
+        ".write": true,
+
+        "calories": {
+          ".validate": "newData.isNumber()"
+        },
+        "healthScore": {
+          ".validate": "newData.isNumber()"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "preparationTime": {
+          ".validate": "newData.isNumber()"
+        }
+      }
+    },
+
+    "units": {
+      ".read": true,
+      ".write": false,
+
+      "$uid": {
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "symbol": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        }
+      }
+    }
+  }
+}
