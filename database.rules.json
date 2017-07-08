@@ -37,7 +37,7 @@
     "recipes": {
       "$rid": {
         ".read": true,
-        ".write": true,
+        ".write": false,
 
         "calories": {
           ".validate": "newData.isNumber()"
@@ -45,10 +45,18 @@
         "healthScore": {
           ".validate": "newData.isNumber()"
         },
+        "ingredients": {
+          "$iid": {
+            ".validate": "root.child('ingredients/' + $iid).exists() && newData.isNumber()"
+          }
+        },
         "name": {
           ".validate": "newData.isString() && newData.val().length > 0"
         },
         "preparationTime": {
+          ".validate": "newData.isNumber()"
+        },
+        "serves": {
           ".validate": "newData.isNumber()"
         }
       }
