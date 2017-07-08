@@ -35,13 +35,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.json$/,
-        exclude: /node_modules/,
-        use: [
-          'json-loader'
-        ]
-      },
-      {
         test: /\.ya?ml$/,
         exclude: /node_modules/,
         use: [
