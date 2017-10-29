@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import plus from '@assets/icon-plus.svg'
 import minus from '@assets/icon-minus.svg'
-import '../../style/Counter.styl'
+import SVG from './SVG'
 
 class Counter extends PureComponent {
   static propTypes = {
@@ -52,10 +52,10 @@ class Counter extends PureComponent {
       </span>
       <div className='buttons'>
         <button onClick={this.update(1)}>
-          <img src={plus} />
+          <SVG icon={plus} />
         </button>
         <button onClick={this.update(-1)}>
-          <img src={minus} />
+          <SVG icon={minus} />
         </button>
       </div>
     </div>

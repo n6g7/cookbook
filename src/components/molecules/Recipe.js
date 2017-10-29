@@ -7,7 +7,6 @@ import { Counter } from '@atoms'
 import servingsImage from '@assets/icon-servings.svg'
 import vegetarianImage from '@assets/icon-vegetarian.svg'
 import cheesefreeImage from '@assets/icon-cheesefree.svg'
-import '../../style/Recipe.styl'
 
 class Recipe extends PureComponent {
   static propTypes = {

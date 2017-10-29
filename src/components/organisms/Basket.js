@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import { Ingredient } from '@atoms'
 import { buildBasket } from '@services/basket'
-import '../../style/Basket.styl'
 
 class Basket extends PureComponent {
   static propTypes = {

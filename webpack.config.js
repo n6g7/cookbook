@@ -17,7 +17,8 @@ module.exports = {
       '@organisms': path.resolve(__dirname, 'src/components/organisms'),
       '@pages': path.resolve(__dirname, 'src/components/pages'),
       '@selectors': path.resolve(__dirname, 'src/redux/selectors'),
-      '@services': path.resolve(__dirname, 'src/services')
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@theme': path.resolve(__dirname, 'src/theme')
     }
   },
   module: {
@@ -30,28 +31,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.styl(us)?$/,
+        test: /\.svg$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
-          'css-loader',
-          'stylus-loader'
-        ]
-      },
-      {
-        test: /\.(png|svg)$/,
-        exclude: /node_modules/,
-        use: [
-          'url-loader',
+          'raw-loader',
           'img-loader'
         ]
       },
       {
-        test: /\.ya?ml$/,
+        test: /\.png$/,
         exclude: /node_modules/,
         use: [
-          'json-loader',
-          'yaml-loader'
+          'url-loader',
+          'img-loader'
         ]
       }
     ]
