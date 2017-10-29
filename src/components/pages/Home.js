@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { Basket, RecipeList } from '@organisms'
+import basket from '@assets/basket.svg'
+import hat from '@assets/hat.svg'
+import { Button, Link } from '@atoms'
+import { BlankPage } from '@templates'
 
 import {
   ingredientsSelector,
@@ -16,12 +19,10 @@ class Home extends PureComponent {
   }
 
   render () {
-    const { ingredients, recipes } = this.props
-
-    return <main>
-      <Basket ingredients={ingredients} recipes={recipes} />
-      <RecipeList recipes={recipes} />
-    </main>
+    return <BlankPage title='Hello Charlotte, what do you want to do today?'>
+      <Link to='/recipes/create' icon={hat} colour='blue'>Add a new recipe</Link>
+      <Button icon={basket}>Prepare my groceries</Button>
+    </BlankPage>
   }
 }
 

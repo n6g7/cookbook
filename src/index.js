@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import { ThemeProvider, injectGlobal } from 'styled-components'
 
 import App from './components/App'
@@ -23,7 +23,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <Route component={App} />
       </BrowserRouter>
     </ThemeProvider>
   </Provider>,
