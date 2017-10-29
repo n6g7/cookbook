@@ -1,10 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Ingredient from './Ingredient'
 import { buildBasket } from '../services/basket'
 import '../style/Basket.styl'
 
 class Basket extends React.PureComponent {
+  static propTypes = {
+    ingredients: PropTypes.array.isRequired,
+    recipes: PropTypes.array.isRequired
+  }
+
   render () {
     const { ingredients, recipes } = this.props
     const basket = buildBasket(recipes, ingredients)
@@ -34,11 +40,6 @@ class Basket extends React.PureComponent {
       }
     </aside>
   }
-}
-
-Basket.propTypes = {
-  ingredients: React.PropTypes.array.isRequired,
-  recipes: React.PropTypes.array.isRequired
 }
 
 export default Basket

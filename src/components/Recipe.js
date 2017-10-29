@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import Counter from './Counter'
@@ -9,6 +10,21 @@ import cheesefreeImage from '../images/icon-cheesefree.svg'
 import '../style/Recipe.styl'
 
 class Recipe extends React.PureComponent {
+  static propTypes = {
+    cheesefreeServings: PropTypes.number.isRequired,
+    image: PropTypes.string,
+    index: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    servings: PropTypes.number.isRequired,
+    veggieServings: PropTypes.number.isRequired
+  }
+
+  static defaultProps = {
+    cheesefreeServings: 0,
+    servings: 0,
+    veggieServings: 0
+  }
+
   render () {
     const {
       cheesefreeServings,
@@ -49,22 +65,6 @@ class Recipe extends React.PureComponent {
       </div>
     </article>
   }
-}
-
-Recipe.propTypes = {
-  cheesefreeServings: React.PropTypes.number.isRequired,
-  image: React.PropTypes.string,
-  index: React.PropTypes.number.isRequired,
-  name: React.PropTypes.string.isRequired,
-  servings: React.PropTypes.number.isRequired,
-  setServings: React.PropTypes.func.isRequired,
-  veggieServings: React.PropTypes.number.isRequired
-}
-
-Recipe.defaultProps = {
-  cheesefreeServings: 0,
-  servings: 0,
-  veggieServings: 0
 }
 
 export default Recipe

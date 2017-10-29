@@ -1,9 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { RecipeContainer } from './Recipe'
 import '../style/RecipeList.styl'
 
 class RecipeList extends React.PureComponent {
+  static propTypes = {
+    recipes: PropTypes.array.isRequired
+  }
+
   render () {
     const { recipes } = this.props
 
@@ -21,10 +26,6 @@ class RecipeList extends React.PureComponent {
       )}
     </section>
   }
-}
-
-RecipeList.propTypes = {
-  recipes: React.PropTypes.array.isRequired
 }
 
 export default RecipeList

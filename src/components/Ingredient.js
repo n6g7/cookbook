@@ -1,8 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import '../style/Ingredient.styl'
 
 class Ingredient extends React.PureComponent {
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired
+  }
+
   render () {
     const { name, type, quantity } = this.props
 
@@ -14,12 +21,6 @@ class Ingredient extends React.PureComponent {
       </span>
     </li>
   }
-}
-
-Ingredient.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string.isRequired,
-  quantity: React.PropTypes.number.isRequired
 }
 
 export default Ingredient

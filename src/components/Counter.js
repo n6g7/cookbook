@@ -1,10 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import plus from '../images/icon-plus.svg'
 import minus from '../images/icon-minus.svg'
 import '../style/Counter.styl'
 
 class Counter extends React.PureComponent {
+  static propTypes = {
+    image: PropTypes.string.isRequired,
+    label: PropTypes.string,
+    max: PropTypes.number,
+    value: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
+  }
+
   componentWillReceiveProps (nextProps) {
     const { max, onChange, value } = nextProps
 
@@ -47,14 +56,6 @@ class Counter extends React.PureComponent {
       </div>
     </div>
   }
-}
-
-Counter.propTypes = {
-  image: React.PropTypes.string.isRequired,
-  label: React.PropTypes.string,
-  max: React.PropTypes.number,
-  value: React.PropTypes.number.isRequired,
-  onChange: React.PropTypes.func.isRequired
 }
 
 Counter.defaultProps = {

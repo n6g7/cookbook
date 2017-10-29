@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { homepage, version } from '../../package.json'
@@ -7,6 +8,11 @@ import RecipeList from './RecipeList'
 import '../style/App.styl'
 
 class App extends React.PureComponent {
+  static propTypes = {
+    ingredients: PropTypes.array.isRequired,
+    recipes: PropTypes.array.isRequired
+  }
+
   render () {
     const { ingredients, recipes } = this.props
 
@@ -22,11 +28,6 @@ class App extends React.PureComponent {
       </footer>
     </div>
   }
-}
-
-App.propTypes = {
-  ingredients: React.PropTypes.array.isRequired,
-  recipes: React.PropTypes.array.isRequired
 }
 
 export default App
