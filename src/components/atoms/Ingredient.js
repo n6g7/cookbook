@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import '../style/Ingredient.styl'
+import '../../style/Ingredient.styl'
 
 class Ingredient extends PureComponent {
   static propTypes = {

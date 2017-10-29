@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import Recipe from './Recipe'
-import '../style/RecipeList.styl'
+import { Recipe } from '@molecules'
+import '../../style/RecipeList.styl'
 
 class RecipeList extends PureComponent {
   static propTypes = {

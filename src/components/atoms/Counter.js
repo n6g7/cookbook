@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import plus from '../images/icon-plus.svg'
-import minus from '../images/icon-minus.svg'
-import '../style/Counter.styl'
+import plus from '@assets/icon-plus.svg'
+import minus from '@assets/icon-minus.svg'
+import '../../style/Counter.styl'
 
 class Counter extends PureComponent {
   static propTypes = {

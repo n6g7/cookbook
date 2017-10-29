@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import Ingredient from './Ingredient'
-import { buildBasket } from '../services/basket'
-import '../style/Basket.styl'
+import { Ingredient } from '@atoms'
+import { buildBasket } from '@services/basket'
+import '../../style/Basket.styl'
 
 class Basket extends PureComponent {
   static propTypes = {
