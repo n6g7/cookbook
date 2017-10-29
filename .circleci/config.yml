@@ -1,0 +1,32 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/cook
+
+    docker:
+      - image: node:8
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - cook-{{ .Branch }}-{{ checksum "package.json" }}
+            - cook-{{ .Branch }}
+            - cook-master-{{ checksum "package.json" }}
+            - cook-master
+
+      - run:
+          name: Install dependencies
+          command: yarn
+
+      - run:
+          name: Run tests
+          command: yarn test
+
+      - save_cache:
+          key: cook-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.yarn
+            - ~/cook/node_modules
