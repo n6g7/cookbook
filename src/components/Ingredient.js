@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import '../style/Ingredient.styl'
 
-class Ingredient extends React.PureComponent {
+class Ingredient extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,

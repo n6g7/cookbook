@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
@@ -7,7 +7,7 @@ import Basket from './Basket'
 import RecipeList from './RecipeList'
 import '../style/App.styl'
 
-class App extends React.PureComponent {
+class App extends PureComponent {
   static propTypes = {
     ingredients: PropTypes.array.isRequired,
     recipes: PropTypes.array.isRequired
@@ -30,8 +30,6 @@ class App extends React.PureComponent {
   }
 }
 
-export default App
-
 const mapStateToProps = ({ ingredients, recipes }) => ({
   ingredients,
   recipes
@@ -39,7 +37,4 @@ const mapStateToProps = ({ ingredients, recipes }) => ({
 
 const mapDispatchToProps = {}
 
-export const AppContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

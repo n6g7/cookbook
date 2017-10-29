@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 
 import Counter from './Counter'
 import { setServings } from '../redux/reducers/recipes.actions'
@@ -9,7 +8,7 @@ import vegetarianImage from '../images/icon-vegetarian.svg'
 import cheesefreeImage from '../images/icon-cheesefree.svg'
 import '../style/Recipe.styl'
 
-class Recipe extends React.PureComponent {
+class Recipe extends PureComponent {
   static propTypes = {
     cheesefreeServings: PropTypes.number.isRequired,
     image: PropTypes.string,
@@ -68,14 +67,3 @@ class Recipe extends React.PureComponent {
 }
 
 export default Recipe
-
-const mapStateToProps = () => ({})
-
-const mapDispatchToProps = {
-  setServings
-}
-
-export const RecipeContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Recipe)

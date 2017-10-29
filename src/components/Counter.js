@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import plus from '../images/icon-plus.svg'
 import minus from '../images/icon-minus.svg'
 import '../style/Counter.styl'
 
-class Counter extends React.PureComponent {
+class Counter extends PureComponent {
   static propTypes = {
     image: PropTypes.string.isRequired,
     label: PropTypes.string,
     max: PropTypes.number,
     value: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired
+  }
+
+  static defaultProps = {
+    value: 0
   }
 
   componentWillReceiveProps (nextProps) {
@@ -56,10 +60,6 @@ class Counter extends React.PureComponent {
       </div>
     </div>
   }
-}
-
-Counter.defaultProps = {
-  value: 0
 }
 
 export default Counter

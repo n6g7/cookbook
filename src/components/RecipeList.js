@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import { RecipeContainer } from './Recipe'
+import Recipe from './Recipe'
 import '../style/RecipeList.styl'
 
-class RecipeList extends React.PureComponent {
+class RecipeList extends PureComponent {
   static propTypes = {
     recipes: PropTypes.array.isRequired
   }
@@ -14,7 +14,7 @@ class RecipeList extends React.PureComponent {
 
     return <section>
       { recipes.map((recipe, index) =>
-        <RecipeContainer
+        <Recipe
           image={recipe.image}
           index={index}
           name={recipe.name}

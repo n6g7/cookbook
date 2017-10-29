@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import Ingredient from './Ingredient'
 import { buildBasket } from '../services/basket'
 import '../style/Basket.styl'
 
-class Basket extends React.PureComponent {
+class Basket extends PureComponent {
   static propTypes = {
     ingredients: PropTypes.array.isRequired,
     recipes: PropTypes.array.isRequired
