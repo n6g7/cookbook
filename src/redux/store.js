@@ -5,11 +5,8 @@ import { sagaMiddleware } from './enhancers/middlewares'
 import reducers from './reducers'
 import rootSaga from './sagas'
 
-import preloadedState from '../../cookbook.yml'
-
 const store = createStore(
   reducers,
-  preloadedState,
   enhancers
 )
 
