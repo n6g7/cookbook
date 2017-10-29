@@ -10,7 +10,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@actions': path.resolve(__dirname, 'src/redux/actions')
+      '@actions': path.resolve(__dirname, 'src/redux/actions'),
+      '@selectors': path.resolve(__dirname, 'src/redux/selectors')
     }
   },
   module: {

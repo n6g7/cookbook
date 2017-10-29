@@ -7,6 +7,11 @@ import Basket from './Basket'
 import RecipeList from './RecipeList'
 import '../style/App.styl'
 
+import {
+  ingredientsSelector,
+  recipesSelector
+} from '@selectors'
+
 class App extends PureComponent {
   static propTypes = {
     ingredients: PropTypes.array.isRequired,
@@ -30,9 +35,9 @@ class App extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ ingredients, recipes }) => ({
-  ingredients,
-  recipes
+const mapStateToProps = state => ({
+  ingredients: ingredientsSelector(state),
+  recipes: recipesSelector(state)
 })
 
 const mapDispatchToProps = {}
