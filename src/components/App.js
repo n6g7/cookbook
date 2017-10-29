@@ -5,7 +5,6 @@ import {
   AddRecipe,
   Home
 } from '@pages'
-import { homepage, version } from '../../package.json'
 
 class App extends PureComponent {
   render () {
@@ -14,11 +13,6 @@ class App extends PureComponent {
         <Route exact path='/' component={Home} />
         <Route exact path='/recipes/create' component={AddRecipe} />
       </Switch>
-      <footer>
-        <a href={homepage} target='blank'>
-          v{ version }
-        </a>
-      </footer>
     </div>
   }
 }
