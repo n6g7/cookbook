@@ -10,9 +10,12 @@ import theme from './theme'
 
 injectGlobal`
   body {
+    background: #f1f1f3;
     color: #333335;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
   }
 `
 
