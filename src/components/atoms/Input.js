@@ -3,12 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import theme from '@theme'
-import bubble from './bubble'
-import Suffix from './Suffix'
+import { Bubblify } from './bubble'
 
-const Container = styled.div`
-  ${bubble}
-  margin: ${p => 3 * p.theme.spacing}px 0 ${p => 4 * p.theme.spacing}px;
+const Container = styled(Bubblify('div'))`
+  display: flex;
 `
 
 const StyledInput = styled.input`
@@ -33,9 +31,8 @@ class Input extends PureComponent {
   render () {
     const { colour, suffix, ...props } = this.props
 
-    return <Container colour={colour}>
+    return <Container colour={colour} suffix={suffix}>
       <StyledInput {...props} />
-      { suffix && <Suffix>{ suffix }</Suffix> }
     </Container>
   }
 }
