@@ -29,10 +29,10 @@ class Input extends PureComponent {
   }
 
   render () {
-    const { colour, suffix, ...props } = this.props
+    const { colour, suffix, input, ...props } = this.props
 
     return <Container colour={colour} suffix={suffix}>
-      <StyledInput {...props} />
+      <StyledInput {...input} {...props} />
     </Container>
   }
 }
