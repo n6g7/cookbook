@@ -11,7 +11,7 @@ class App extends PureComponent {
     return <div id='cookbook'>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/recipes/create' component={AddRecipe} />
+        <Route path='/recipes/create' component={AddRecipe} />
       </Switch>
     </div>
   }

@@ -1,10 +1,14 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { reduxForm, Field } from 'redux-form'
 import styled from 'styled-components'
 
 import penpaper from '@assets/penpaper.svg'
+import plus from '@assets/plus.svg'
 import save from '@assets/save.svg'
-import { Button, Input, Label } from '@atoms'
+import { Button, Ingredient, Input, Label, Link } from '@atoms'
+import { formIngredientsSelector } from '@selectors'
 
 const ButtonRow = styled.div`
   display: flex;
@@ -16,22 +20,59 @@ const ButtonRow = styled.div`
   }
 `
 
+const IngredientsList = styled.ul`
+  display: flex;
+  flex-flow: column nowrap;
+  list-style: none;
+  margin: 0 0 ${p => 3 * p.theme.spacing}px;
+  padding: 0;
+
+  li {
+    margin-bottom: ${p => p.theme.spacing}px;
+  }
+`
+
 class AddRecipeForm extends PureComponent {
+  static propTypes = {
+    ingredients: PropTypes.array.isRequired
+  }
+
   render () {
-    const { handleSubmit } = this.props
+    const {
+      handleSubmit,
+      ingredients
+    } = this.props
 
     return <form onSubmit={handleSubmit}>
       <Label>How would you like to name it?</Label>
-      <Field name='name' component={Input} type='text' colour='blue' />
+      <Field name='name' component={Input} type='text' colour='blue' placeholder='Name of the recipe' />
 
       <Label>How many servings?</Label>
-      <Field name='serves' component={Input} type='number' colour='blue' />
+      <Field name='serves' component={Input} type='number' colour='blue' placeholder='Number of servings' />
 
       <Label>What are the ingredients?</Label>
-      <Button icon={penpaper} colour='blue'>Edit ingredients</Button>
+      { ingredients.length > 0 &&
+        <div>
+          <IngredientsList>
+            { ingredients.map(ingredient =>
+              <li key={ingredient.id}>
+                <Ingredient
+                  name={ingredient.name}
+                  quantity={ingredient.value}
+                  unit={ingredient.unit}
+                />
+              </li>
+            )}
+          </IngredientsList>
+          <Link to='/recipes/create/ingredients' icon={penpaper} colour='blue'>Edit ingredients</Link>
+        </div>
+      }
+      { ingredients.length === 0 &&
+        <Link to='/recipes/create/ingredients' icon={plus} colour='blue'>Add ingredients</Link>
+      }
 
       <Label>What does it look like?</Label>
-      <Button icon={penpaper} colour='blue'>Edit the picture</Button>
+      <Button icon={plus} colour='blue'>Edit the picture</Button>
 
       <Label>Is it healthy?</Label>
       <ButtonRow>
@@ -40,12 +81,26 @@ class AddRecipeForm extends PureComponent {
         <Button colour='grey'>Unhealthy</Button>
       </ButtonRow>
 
+      <Label>How many calories in a serving?</Label>
+      <Field name='calories' component={Input} type='number' colour='blue' placeholder='Calories' />
+
+      <Label>How long does it take to cook?</Label>
+      <Field name='preparationTime' component={Input} type='number' colour='blue' placeholder='Minutes' />
+
       <Label>All good?</Label>
       <Button icon={save} colour='blue' type='submit'>Yes, save the recipe</Button>
     </form>
   }
 }
 
-export default reduxForm({
-  form: 'createRecipe'
-})(AddRecipeForm)
+const mapStateToProps = state => ({
+  ingredients: formIngredientsSelector(state)
+})
+
+export default connect(mapStateToProps)(
+  reduxForm({
+    form: 'createRecipe',
+    destroyOnUnmount: false,
+    forceUnregisterOnUnmount: true
+  })(AddRecipeForm)
+)
