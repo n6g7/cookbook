@@ -15,6 +15,7 @@ const StyledInput = styled.input`
   font-family: inherit;
   font-size: inherit;
   height: ${p => 4 * p.theme.spacing}px;
+  min-width: 0;
   outline: none;
 `
 
@@ -29,9 +30,15 @@ class Input extends PureComponent {
   }
 
   render () {
-    const { colour, suffix, input, ...props } = this.props
+    const {
+      className,
+      colour,
+      suffix,
+      input,
+      ...props
+    } = this.props
 
-    return <Container colour={colour} suffix={suffix}>
+    return <Container className={className} colour={colour} suffix={suffix}>
       <StyledInput {...input} {...props} />
     </Container>
   }
