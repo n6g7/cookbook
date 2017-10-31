@@ -1,23 +1,44 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 20px;
+  justify-content: flex-start;
+`
+
+const Quantity = styled.span`
+  margin-right: ${p => 2 * p.theme.spacing}px;
+  width: ${p => 5 * p.theme.spacing}px;
+`
+const Unit = styled.span`
+  color: ${p => p.theme.text.faded};
+  margin-left: ${p => p.theme.spacing / 2}px;
+`
+const Name = styled.span``
 
 class Ingredient extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired
+    quantity: PropTypes.string.isRequired,
+    unit: PropTypes.string.isRequired
   }
 
-  render () {
-    const { name, type, quantity } = this.props
+  capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
 
-    return <li className='ingredient'>
-      <span className='name'>{name}</span>
-      <span className='quantity'>
+  render () {
+    const { name, quantity, unit } = this.props
+
+    return <Container>
+      <Quantity>
         {quantity}
-        <span className='unit'>{type}</span>
-      </span>
-    </li>
+        <Unit>{unit}</Unit>
+      </Quantity>
+      <Name>{this.capitalize(name)}</Name>
+    </Container>
   }
 }
 
