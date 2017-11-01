@@ -10,6 +10,6 @@ export default styled(Bubblify('button')).attrs({
   font-family: 'Source Sans Pro', sans-serif;
   font-size: inherit;
   justify-content: center;
-  margin: ${p => p.theme.spacing}px 0;
+  margin: 0;
   outline: none;
 `
