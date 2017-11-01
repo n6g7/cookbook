@@ -108,10 +108,24 @@ class AddRecipeForm extends PureComponent {
       </ButtonRow>
 
       <Label>How many calories in a serving?</Label>
-      <Field name='calories' component={Input} type='number' colour='blue' placeholder='Calories' />
+      <Field
+        name='calories'
+        component={Input}
+        type='number'
+        colour='blue'
+        placeholder='0'
+        suffix='cals'
+      />
 
       <Label>How long does it take to cook?</Label>
-      <Field name='preparationTime' component={Input} type='number' colour='blue' placeholder='Minutes' />
+      <Field
+        name='preparationTime'
+        component={Input}
+        type='number'
+        colour='blue'
+        placeholder='0'
+        suffix='minutes'
+      />
 
       <Label>All good?</Label>
       <Button icon={save} colour='blue' type='submit'>Yes, save the recipe</Button>
