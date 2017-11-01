@@ -7,7 +7,15 @@ import styled from 'styled-components'
 import penpaper from '@assets/penpaper.svg'
 import plus from '@assets/plus.svg'
 import save from '@assets/save.svg'
-import { Button, Ingredient, Input, Label, Link } from '@atoms'
+import {
+  Button,
+  FileButton,
+  Ingredient,
+  Input,
+  Label,
+  Link,
+  Radio
+} from '@atoms'
 import { formIngredientsSelector } from '@selectors'
 
 const ButtonRow = styled.div`
@@ -76,9 +84,27 @@ class AddRecipeForm extends PureComponent {
 
       <Label>Is it healthy?</Label>
       <ButtonRow>
-        <Button colour='green'>Healthy</Button>
-        <Button colour='grey'>Balanced</Button>
-        <Button colour='grey'>Unhealthy</Button>
+        <Field
+          name='healthScore'
+          component={Radio}
+          radioValue='1'
+          children='Healthy'
+          activeColour='green'
+        />
+        <Field
+          name='healthScore'
+          component={Radio}
+          radioValue='2'
+          children='Balanced'
+          activeColour='orange'
+        />
+        <Field
+          name='healthScore'
+          component={Radio}
+          radioValue='3'
+          children='Unhealthy'
+          activeColour='red'
+        />
       </ButtonRow>
 
       <Label>How many calories in a serving?</Label>

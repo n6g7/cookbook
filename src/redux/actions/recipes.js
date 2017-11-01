@@ -19,6 +19,7 @@ export const createRecipe = recipe => ({
   recipe: {
     ...recipe,
     calories: parseInt(recipe.calories),
+    healthScore: parseInt(recipe.healthScore),
     ingredients: _mapValues(recipe.ingredients, parseFloat),
     preparationTime: parseInt(recipe.preparationTime),
     serves: parseInt(recipe.serves)
