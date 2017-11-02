@@ -1,3 +1,4 @@
+import { reset } from 'redux-form'
 import { call, fork, put, takeEvery } from 'redux-saga/effects'
 
 import rsf from '../rsf'
@@ -15,6 +16,7 @@ function * createRecipeSaga ({ image, recipe }) {
     const uploadTask = yield call(rsf.storage.uploadFile, `recipes/${recipeId}`, image)
     yield uploadTask
     yield put(createRecipeSuccess())
+    yield put(reset('createRecipe'))
   } catch (error) {
     yield put(createRecipeFailure(error))
   }
