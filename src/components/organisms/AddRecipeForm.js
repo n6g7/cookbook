@@ -9,13 +9,13 @@ import plus from '@assets/plus.svg'
 import save from '@assets/save.svg'
 import {
   Button,
-  FileButton,
   Ingredient,
   Input,
   Label,
   Link,
   Radio
 } from '@atoms'
+import { ImageSelector } from '@molecules'
 import { formIngredientsSelector } from '@selectors'
 
 const ButtonRow = styled.div`
@@ -82,12 +82,9 @@ class AddRecipeForm extends PureComponent {
       <Label>What does it look like?</Label>
       <Field
         name='image'
-        component={FileButton}
-        icon={plus}
+        component={ImageSelector}
         colour='blue'
-      >
-        Edit the picture
-      </Field>
+      />
 
       <Label>Is it healthy?</Label>
       <ButtonRow>

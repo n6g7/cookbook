@@ -21,28 +21,21 @@ class FileButton extends PureComponent {
 
   onClick = () => this.input.click()
   onChange = event => {
-    const { multi, input: { onChange } } = this.props
+    const { multi, onChange } = this.props
 
     if (multi) onChange(event.target.files)
     else onChange(event.target.files[0])
   }
 
   render () {
-    const {
-      children,
-      input: {
-        value,
-        ...input
-      },
-      ...props
-    } = this.props
+    const { children, input, ...props } = this.props
 
     return <div>
       <Input
         type='file'
         innerRef={ref => { this.input = ref }}
-        {...input}
         onChange={this.onChange}
+        {...input}
       />
       <Button onClick={this.onClick} {...props}>
         { children }
