@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
+import { routerReducer } from 'react-router-redux'
 
 import categories from './categories'
 import ingredients from './ingredients'
@@ -11,5 +12,6 @@ export default combineReducers({
   form: formReducer,
   ingredients,
   recipes,
+  router: routerReducer,
   units
 })

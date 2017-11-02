@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
 import { ThemeProvider, injectGlobal } from 'styled-components'
 
+import history from '@history'
 import App from './components/App'
 import store from './redux/store'
 import theme from './theme'
@@ -22,9 +24,9 @@ injectGlobal`
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <ConnectedRouter history={history}>
         <Route component={App} />
-      </BrowserRouter>
+      </ConnectedRouter>
     </ThemeProvider>
   </Provider>,
   document.getElementById('app')
