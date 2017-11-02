@@ -1,0 +1,9 @@
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /recipes {
+      match /{recipeId} {
+        allow read, write;
+      }
+    }
+  }
+}
