@@ -1,5 +1,6 @@
 import { reset } from 'redux-form'
 import { call, fork, put, takeEvery } from 'redux-saga/effects'
+import { push } from 'react-router-redux'
 
 import rsf from '../rsf'
 
@@ -17,6 +18,7 @@ function * createRecipeSaga ({ image, recipe }) {
     yield uploadTask
     yield put(createRecipeSuccess())
     yield put(reset('createRecipe'))
+    yield put(push('/'))
   } catch (error) {
     yield put(createRecipeFailure(error))
   }
