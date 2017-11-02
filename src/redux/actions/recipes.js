@@ -14,7 +14,7 @@ export const syncRecipes = recipes => ({
   recipes
 })
 
-export const createRecipe = recipe => ({
+export const createRecipe = ({ image, ...recipe }) => ({
   type: types.CREATE_RECIPE.REQUEST,
   recipe: {
     ...recipe,
@@ -23,7 +23,8 @@ export const createRecipe = recipe => ({
     ingredients: _mapValues(recipe.ingredients, parseFloat),
     preparationTime: parseInt(recipe.preparationTime),
     serves: parseInt(recipe.serves)
-  }
+  },
+  image
 })
 
 export const createRecipeSuccess = () => ({

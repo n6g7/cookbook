@@ -80,7 +80,14 @@ class AddRecipeForm extends PureComponent {
       }
 
       <Label>What does it look like?</Label>
-      <Button icon={plus} colour='blue'>Edit the picture</Button>
+      <Field
+        name='image'
+        component={FileButton}
+        icon={plus}
+        colour='blue'
+      >
+        Edit the picture
+      </Field>
 
       <Label>Is it healthy?</Label>
       <ButtonRow>

@@ -9,9 +9,11 @@ import {
   types
 } from '@actions/recipes'
 
-function * createRecipeSaga ({ recipe }) {
+function * createRecipeSaga ({ image, recipe }) {
   try {
-    yield call(rsf.database.create, 'recipes', recipe)
+    const recipeId = yield call(rsf.database.create, 'recipes', recipe)
+    const uploadTask = yield call(rsf.storage.uploadFile, `recipes/${recipeId}`, image)
+    yield uploadTask
     yield put(createRecipeSuccess())
   } catch (error) {
     yield put(createRecipeFailure(error))
