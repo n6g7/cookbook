@@ -1,164 +1,229 @@
 ---
 
 ingredients:
-  - name: concombre
-    category: vegetables
+  - name: poireau
+    category: légumes
     type: u
     meat: false
     cheese: false
+  - name: concombre
+    category: légumes
+    type: u
+    meat: false
+    cheese: false
+  - name: haricots verts
+    category: légumes
+    type: g
+    meat: false
+    cheese: false
+  - name: aubergine
+    category: légumes
+    type: u
+    meat: false
+    cheese: false
+  - name: épinards
+    category: légumes
+    type: g
+    meat: false
+    cheese: false
   - name: tomate
-    category: vegetables
+    category: légumes
+    type: u
+    meat: false
+    cheese: false
+  - name: tomate pelée concassée
+    category: légumes
+    type: u
+    meat: false
+    cheese: false
+  - name: coulis de tomate
+    category: légumes
+    type: cl
+    meat: false
+    cheese: false
+  - name: tomate confite
+    category: légumes
     type: u
     meat: false
     cheese: false
   - name: courgette
-    category: vegetables
+    category: légumes
     type: u
     meat: false
     cheese: false
-  - name: riz
-    category: vegetables
-    type: g
-    meat: false
-    cheese: false
-  - name: pâtes complètes
-    category: vegetables
-    type: g
-    meat: false
-    cheese: false
-  - name: pommes de terre
-    category: vegetables
-    type: kg
-    meat: false
-    cheese: false
-  - name: couscous
-    category: vegetables
-    type: g
-    meat: false
-    cheese: false
-  - name: thon
-    category: carbohydrates
-    type: g
-    meat: true
-    cheese: false
-  - name: feta
-    category: carbohydrates
-    type: g
-    meat: false
-    cheese: true
-  - name: chorizo
-    category: carbohydrates
-    type: g
-    meat: true
-    cheese: false
-  - name: oeuf
-    category: meat and fish
+  - name: échalote
+    category: légumes
     type: u
     meat: false
     cheese: false
-  - name: mozarella
-    category: cheese
-    type: g
-    meat: false
-    cheese: true
-  - name: parmesan
-    category: cheese
-    type: g
-    meat: false
-    cheese: true
-  - name: basilic
-    category: flavour
-    type: g
-    meat: false
-    cheese: false
-  - name: echalote
-    category: flavour
+  - name: oignon (petit)
+    category: légumes
     type: u
     meat: false
     cheese: false
-  - name: oignon
-    category: flavour
+  - name: oignon nouveaux
+    category: légumes
     type: u
     meat: false
     cheese: false
   - name: ail
-    category: flavour
+    category: légumes
+    type: gousse
+    meat: false
+    cheese: false
+  - name: riz
+    category: féculents
+    type: g
+    meat: false
+    cheese: false
+  - name: pâtes
+    category: féculents
+    type: g
+    meat: false
+    cheese: false
+  - name: pommes de terre (grosse)
+    category: féculents
     type: u
     meat: false
     cheese: false
+  - name: couscous
+    category: féculents
+    type: g
+    meat: false
+    cheese: false
+  - name: farine
+    category: féculents
+    type: g
+    meat: false
+    cheese: false
+  - name: pain poilane
+    category: féculents
+    type: g
+    meat: false
+    cheese: false
+  - name: thon
+    category: viande poisson oeuf
+    type: boite
+    meat: true
+    cheese: false
+  - name: jambon
+    category: viande poisson oeuf
+    type: tranche
+    meat: true
+    cheese: false
+  - name: oeuf
+    category: viande poisson oeuf
+    type: u
+    meat: false
+    cheese: false
+  - name: chorizo
+    category: viande poisson oeuf
+    type: g
+    meat: true
+    cheese: false
+  - name: feta
+    category: produits laitiers
+    type: g
+    meat: false
+    cheese: true
+  - name: mozarella
+    category: produits laitiers
+    type: g
+    meat: false
+    cheese: true
+  - name: parmesan
+    category: produits laitiers
+    type: g
+    meat: false
+    cheese: true
+  - name: comté
+    category: produits laitiers
+    type: g
+    meat: false
+    cheese: true
+  - name: lait
+    category: produits laitiers
+    type: cl
+    meat: false
+    cheese: false
   - name: beurre
-    category: other
+    category: produits laitiers
+    type: g
+    meat: false
+    cheese: false
+  - name: basilic
+    category: herbes
+    type: g
+    meat: false
+    cheese: false
+  - name: persil
+    category: herbes
+    type: g
+    meat: false
+    cheese: false
+  - name: thym
+    category: herbes
     type: g
     meat: false
     cheese: false
   - name: sucre
-    category: other
+    category: sucre
     type: g
     meat: false
     cheese: false
-  - name: lait
-    category: other
-    type: cl
+  - name: tablette de chocolat
+    category: sucre
+    type: g
     meat: false
     cheese: false
-  - name: farine
-    category: other
+  - name: sucre vanillé
+    category: sucre
     type: g
     meat: false
     cheese: false
   - name: levure
-    category: other
+    category: autre
     type: u
     meat: false
     cheese: false
-  - name: tablette de chocolat
-    category: other
-    type: g
-    meat: false
-    cheese: false
-  - name: tomate pelée concassée
-    category: other
-    type: u
-    meat: false
-    cheese: false
-  - name: sucre vanillé
-    category: other
-    type: g
+  - name: bouillon de légumes
+    category: autre
+    type: cube
     meat: false
     cheese: false
 
 recipes:
-  - name: Salade de concombre
+  - name: Salade de concombre (4)
     image: http://i.imgur.com/M6CTrbD.jpg
-    serves: 1
+    serves: 4
     ingredients:
       - name: concombre
-        quantity: 0.25
-      - name: tomate
-        quantity: 2
-      - name: riz
         quantity: 1
+      - name: tomate
+        quantity: 8
+      - name: riz
+        quantity: 2
       - name: thon
-        quantity: 0.25
+        quantity: 1
       - name: feta
-        quantity: 0.25
-  - name: Penne à la sauce tomate
+        quantity: 100
+  - name: Penne à la sauce tomate (4)
     image: http://i.imgur.com/Sms1Uhk.jpg
-    serves: 1
+    serves: 4
     ingredients:
       - name: tomate pelée concassée
-        quantity: 0.25
-      - name: pâtes complètes
-        quantity: 100
+        quantity: 1
+      - name: pâtes
+        quantity: 400
       - name: parmesan
-        quantity: 20
-      - name: oignon
-        quantity: 0.25
+        quantity: 80
+      - name: oignon (petit)
+        quantity: 1
       - name: ail
-        quantity: 0.25
+        quantity: 1
       - name: basilic
         quantity: 1
-  - name: Marbré au chocolat
+  - name: Marbré au chocolat (6)
     image: http://i.imgur.com/Sms1Uhk.jpg
     serves: 6
     link: http://www.marmiton.org/recettes/recette_delicieux-marbre-au-chocolat-au-lait_93362.aspx
@@ -177,7 +242,7 @@ recipes:
         quantity: 1
       - name: tablette de chocolat
         quantity: 100
-  - name: Pâte brisée
+  - name: Pâte brisée (4)
     image: http://i.imgur.com/Sms1Uhk.jpg
     serves: 1
     link: https://www.meilleurduchef.com/cgi/mdc/l/fr/recette/pate-brisee1.html
@@ -188,7 +253,7 @@ recipes:
         quantity: 250
       - name: oeuf
         quantity: 1
-  - name: Cookie aux pépites de chocolat
+  - name: Cookie aux pépites de chocolat (20)
     image: http://i.imgur.com/Sms1Uhk.jpg
     serves: 20
     link: http://www.marmiton.org/recettes/recette_cookies-aux-pepites-de-chocolat_11010.aspx
@@ -205,3 +270,108 @@ recipes:
         quantity: 1
       - name: tablette de chocolat
         quantity: 100
+  - name: Velouté de poireaux (4)
+    image: http://i.imgur.com/Sms1Uhk.jpg
+    serves: 4
+    link: http://www.add-website-here.com
+    ingredients:
+      - name: pommes de terre (grosse)
+        quantity: 1
+      - name: poireau
+        quantity: 4
+      - name: oignon (petit)
+        quantity: 2
+      - name: bouillon de légumes
+        quantity: 1
+      - name: lait
+        quantity: 10
+      - name: persil
+        quantity: 5
+  - name: Velouté d'épinards (4)
+    image: http://i.imgur.com/Sms1Uhk.jpg
+    serves: 4
+    link: http://www.add-website-here.com
+    ingredients:
+      - name: épinards
+        quantity: 500
+      - name: pommes de terre (grosse)
+        quantity: 1
+      - name: ail
+        quantity: 1
+      - name: bouillon de légumes
+        quantity: 1
+      - name: parmesan
+        quantity: 80
+  - name: Crumble de tomate (6)
+    image: http://i.imgur.com/Sms1Uhk.jpg
+    serves: 6
+    link: http://www.add-website-here.com
+    ingredients:
+      - name: tomate
+        quantity: 8
+      - name: basilic
+        quantity: 5
+      - name: ail
+        quantity: 1
+      - name: beurre
+        quantity: 80
+      - name: farine
+        quantity: 100
+      - name: parmesan
+        quantity: 100
+  - name: Gratin de penne thon-aubergine (6)
+    image: http://i.imgur.com/Sms1Uhk.jpg
+    serves: 6
+    link: http://www.add-website-here.com
+    ingredients:
+      - name: pâtes
+        quantity: 400
+      - name: aubergine
+        quantity: 2
+      - name: thon
+        quantity: 1
+      - name: coulis de tomate
+        quantity: 20
+      - name: comté
+        quantity: 200
+      - name: basilic
+        quantity: 5
+  - name: Poêlée de haricots verts (4)
+    image: http://i.imgur.com/Sms1Uhk.jpg
+    serves: 4
+    link: http://www.add-website-here.com
+    ingredients:
+      - name: haricots verts
+        quantity: 600
+      - name: oignon nouveaux
+        quantity: 2
+      - name: tomate confite
+        quantity: 6
+      - name: persil
+        quantity: 5
+  - name: Ratatouille express (4)
+    image: http://i.imgur.com/Sms1Uhk.jpg
+    serves: 4
+    link: http://www.add-website-here.com
+    ingredients:
+      - name: aubergine
+        quantity: 1
+      - name: courgette
+        quantity: 2
+      - name: tomate
+        quantity: 3
+      - name: thym
+        quantity: 5
+  - name: Tartines à la tomate (1)
+    image: http://i.imgur.com/Sms1Uhk.jpg
+    serves: 1
+    link: http://www.add-website-here.com
+    ingredients:
+      - name: pain poilane
+        quantity: 100
+      - name: jambon
+        quantity: 2
+      - name: tomate
+        quantity: 2
+      - name: comté
+        quantity: 50
