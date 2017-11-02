@@ -11,15 +11,25 @@ const Input = styled.input`
 class FileButton extends PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired,
+    multi: PropTypes.bool.isRequired,
     onChange: PropTypes.func
   }
 
+  static defaultProps = {
+    multi: false
+  }
+
   onClick = () => this.input.click()
+  onChange = event => {
+    const { multi, input: { onChange } } = this.props
+
+    if (multi) onChange(event.target.files)
+    else onChange(event.target.files[0])
+  }
 
   render () {
     const {
       children,
-      onChange,
       input: {
         value,
         ...input
@@ -30,9 +40,9 @@ class FileButton extends PureComponent {
     return <div>
       <Input
         type='file'
-        onChange={onChange}
         innerRef={ref => { this.input = ref }}
         {...input}
+        onChange={this.onChange}
       />
       <Button onClick={this.onClick} {...props}>
         { children }
