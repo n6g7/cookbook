@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build:
+  test:
     working_directory: ~/cook
 
     docker:
@@ -30,3 +30,43 @@ jobs:
           paths:
             - ~/.yarn
             - ~/cook/node_modules
+
+  deploy:
+    working_directory: ~/cook
+
+    docker:
+      - image: node:8
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - cook-{{ .Branch }}-{{ checksum "package.json" }}
+            - cook-{{ .Branch }}
+            - cook-master-{{ checksum "package.json" }}
+            - cook-master
+
+      - run:
+          name: Install dependencies
+          command: yarn
+
+      - run:
+          name: Build
+          command: yarn build
+
+      - deploy:
+          name: Deploy
+          command: yarn deploy --token "$FIREBASE_TOKEN"
+
+workflows:
+  version: 2
+  stack:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
