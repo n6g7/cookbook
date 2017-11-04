@@ -1,7 +1,7 @@
 {
   "rules": {
     "categories": {
-      ".read": true,
+      ".read": "auth != null",
       ".write": false,
 
       "$cid": {
@@ -12,7 +12,7 @@
     },
 
     "ingredients": {
-      ".read": true,
+      ".read": "auth != null",
       ".write": false,
 
       "$iid": {
@@ -35,10 +35,10 @@
     },
 
     "recipes": {
-      ".read": true,
+      ".read": "auth != null",
 
       "$rid": {
-        ".write": true,
+        ".write": "auth != null",
 
         "calories": {
           ".validate": "newData.isNumber()"
@@ -67,7 +67,7 @@
     },
 
     "units": {
-      ".read": true,
+      ".read": "auth != null",
       ".write": false,
 
       "$uid": {
