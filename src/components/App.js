@@ -41,8 +41,8 @@ class App extends PureComponent {
       { loggedIn &&
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/recipes/:id' component={Recipe} />
           <Route path='/recipes/create' component={AddRecipe} />
+          <Route path='/recipes/:id' component={Recipe} />
         </Switch>
       }
     </Container>
