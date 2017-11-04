@@ -9,13 +9,13 @@ const Label = styled.span`
 `
 
 const HealthyLabel = Label.extend`
-  background: rgba(117, 197, 29, 80);
+  background: rgba(117, 197, 29, 0.8);
 `
 const BalancedLabel = Label.extend`
-  background: rgba(213, 129, 25, 80);
+  background: rgba(213, 129, 25, 0.8);
 `
 const UnhealthyLabel = Label.extend`
-  background: rgba(213, 25, 70, 80);
+  background: rgba(213, 25, 70, 0.8);
 `
 
 const HealthScoreLabel = ({ healthScore }) => {
