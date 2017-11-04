@@ -9,7 +9,6 @@ import { Button, Link } from '@atoms'
 import { BlankPage } from '@templates'
 
 import {
-  ingredientsSelector,
   recipesSelector
 } from '@selectors'
 
@@ -27,7 +26,6 @@ const ButtonList = styled.nav`
 
 class Home extends PureComponent {
   static propTypes = {
-    ingredients: PropTypes.array.isRequired,
     recipes: PropTypes.array.isRequired
   }
 
@@ -42,7 +40,6 @@ class Home extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  ingredients: ingredientsSelector(state),
   recipes: recipesSelector(state)
 })
 
