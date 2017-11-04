@@ -1,5 +1,6 @@
 export default {
   background: '#f1f1f3',
+  border: '#d8d8da',
   colours: {
     blue: '#15a7bc',
     green: '#7ed321',
@@ -10,6 +11,7 @@ export default {
     yellow: '#d5bb19'
   },
   defaultColour: 'purple',
+  shadow: 'rgba(51,51,53,0.24)',
   spacing: 8,
   text: {
     faded: '#909092',

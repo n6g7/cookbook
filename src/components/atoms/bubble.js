@@ -11,7 +11,7 @@ export const bubble = css`
   background: white;
   border: 1px solid ${p => p.theme.colours[p.colour]};
   border-radius: ${p => 3 * p.theme.spacing}px ${p => 3 * p.theme.spacing}px ${p => 3 * p.theme.spacing}px 0;
-  box-shadow: ${p => p.theme.spacing / 4}px ${p => p.theme.spacing / 4}px 0 rgba(51,51,5,0.24);
+  box-shadow: ${p => p.theme.spacing / 4}px ${p => p.theme.spacing / 4}px 0 ${p => p.theme.shadow};
   display: inline-flex;
   flex-flow: row nowrap;
   justify-content: center;
