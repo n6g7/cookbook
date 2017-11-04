@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import basket from '@assets/basket.svg'
 import hat from '@assets/hat.svg'
-import { Button } from '@atoms'
+import { Button, Link } from '@atoms'
 
 const Container = styled.footer`
   display: flex;
@@ -27,7 +27,7 @@ class Footer extends PureComponent {
     return <Container>
       <ButtonRow>
         <Button icon={basket} />
-        <Button icon={hat} colour='blue' />
+        <Link to='/recipes/create' icon={hat} colour='blue' />
       </ButtonRow>
     </Container>
   }
