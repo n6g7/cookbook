@@ -5,22 +5,10 @@ import styled from 'styled-components'
 
 import basket from '@assets/basket.svg'
 import hat from '@assets/hat.svg'
-import { Button, Link } from '@atoms'
+import { Button, ButtonList, Link } from '@atoms'
 import { RecipeCard } from '@molecules'
 import { recipesSelector } from '@selectors'
 import { BlankPage } from '@templates'
-
-const ButtonList = styled.nav`
-  align-items: flex-start;
-  display: flex;
-  flex-flow: column nowrap;
-  margin: ${p => 3 * p.theme.spacing}px 0;
-
-  ${Button}, ${Link} {
-    margin-bottom: ${p => p.theme.spacing}px;
-    width: auto;
-  }
-`
 
 const RecipeList = styled.nav`
   display: flex;
