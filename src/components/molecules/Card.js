@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { Banner } from '@atoms'
+
 const Container = styled.article`
   background: white;
   border: 1px solid ${p => p.theme.border};
@@ -10,14 +12,6 @@ const Container = styled.article`
   display: flex;
   flex-flow: column nowrap;
   height: ${p => 26 * p.theme.spacing}px;
-`
-
-const Header = styled.header`
-  background-image: url(${p => p.image});
-  background-size: cover;
-  border-radius: ${p => p.theme.spacing / 4}px ${p => p.theme.spacing / 4}px 0 0;
-  flex-grow: 1;
-  padding: ${p => p.theme.spacing}px;
 `
 
 const Nav = styled.nav`
@@ -60,9 +54,9 @@ class Card extends PureComponent {
     } = this.props
 
     return <Container>
-      <Header image={image}>
+      <Banner image={image}>
         { label }
-      </Header>
+      </Banner>
       <Nav>
         {children}
       </Nav>

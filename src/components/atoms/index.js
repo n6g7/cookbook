@@ -1,6 +1,6 @@
+export { default as Banner } from './Banner'
 export { default as Button } from './Button'
 export { default as ButtonList } from './ButtonList'
-export { default as Card } from './Card'
 export { default as FileButton } from './FileButton'
 export { default as HealthScoreLabel } from './HealthScoreLabel'
 export { default as Ingredient } from './Ingredient'

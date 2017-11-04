@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import basket from '@assets/basket.svg'
-import { Button, Card, HealthScoreLabel } from '@atoms'
+import { HealthScoreLabel, Link } from '@atoms'
+import Card from './Card'
 
 class RecipeCard extends PureComponent {
   static propTypes = {
