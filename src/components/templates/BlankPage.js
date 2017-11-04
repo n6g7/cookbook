@@ -10,7 +10,7 @@ const Title = styled.h1`
   flex-flow: row nowrap;
   font-size: 32px;
   font-weight: normal;
-  height: ${p => 30 * p.theme.spacing}px;
+  height: ${p => 35 * p.theme.spacing}px;
   margin: 0 0 ${p => 2 * p.theme.spacing}px;
 `
 
