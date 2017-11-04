@@ -15,7 +15,10 @@ function * createRecipeSaga ({ image, recipe }) {
   try {
     const recipeId = yield call(rsf.database.create, 'recipes', recipe)
     const uploadTask = yield call(rsf.storage.uploadFile, `recipes/${recipeId}`, image)
-    yield uploadTask
+    const { downloadURL } = yield uploadTask
+    yield call(rsf.database.patch, `recipes/${recipeId}`, {
+      image: downloadURL
+    })
     yield put(createRecipeSuccess())
     yield put(reset('createRecipe'))
     yield put(push('/'))

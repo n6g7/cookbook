@@ -46,6 +46,9 @@
         "healthScore": {
           ".validate": "newData.isNumber()"
         },
+        "image": {
+          ".validate": "!newData.exists() || newData.isString()"
+        },
         "ingredients": {
           "$iid": {
             ".validate": "root.child('ingredients/' + $iid).exists() && newData.isNumber()"
