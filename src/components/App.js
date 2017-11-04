@@ -1,10 +1,13 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 
 import {
   AddRecipe,
-  Home
+  Home,
+  Login
 } from '@pages'
 
 const Container = styled.div`
@@ -13,6 +16,11 @@ const Container = styled.div`
 `
 
 class App extends PureComponent {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+    loggedIn: PropTypes.bool.isRequired
+  }
+
   componentDidUpdate (prevProps) {
     if (this.props.location !== prevProps.location) {
       window.scrollTo(0, 0)
@@ -20,13 +28,26 @@ class App extends PureComponent {
   }
 
   render () {
+    const { loggedIn } = this.props
+
     return <Container>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/recipes/create' component={AddRecipe} />
-      </Switch>
+      { !loggedIn &&
+        <Switch>
+          <Route path='/' component={Login} />
+        </Switch>
+      }
+      { loggedIn &&
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/recipes/create' component={AddRecipe} />
+        </Switch>
+      }
     </Container>
   }
 }
 
-export default App
+const mapStateToProps = state => ({
+  loggedIn: state.auth.loggedIn
+})
+
+export default connect(mapStateToProps)(App)
