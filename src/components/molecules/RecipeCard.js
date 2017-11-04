@@ -14,6 +14,7 @@ class RecipeCard extends PureComponent {
     const {
       calories,
       healthScore,
+      id,
       image,
       name,
       preparationTime
@@ -25,7 +26,7 @@ class RecipeCard extends PureComponent {
       title={name}
       subtitle={`${calories} kcal  ${preparationTime} min`}
     >
-      <Button icon={basket} />
+      <Link to={`/recipes/${id}`} icon={basket} />
     </Card>
   }
 }
