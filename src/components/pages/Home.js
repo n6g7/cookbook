@@ -22,13 +22,18 @@ const RecipeList = styled.nav`
 
 class Home extends PureComponent {
   static propTypes = {
-    recipes: PropTypes.array.isRequired
+    recipes: PropTypes.array.isRequired,
+    user: PropTypes.object.isRequired
   }
 
-  render () {
-    const { recipes } = this.props
+  firstname = user => user.displayName.split(' ')[0]
 
-    return <BlankPage title='Hello Charlotte, what do you want to do today?'>
+  render () {
+    const { recipes, user } = this.props
+
+    return <BlankPage
+      title={`Hello ${this.firstname(user)}, what do you want to do today?`}
+    >
       <ButtonList>
         <Link to='/recipes/create' icon={hat} colour='blue'>Add a new recipe</Link>
         <Button icon={basket}>Prepare my groceries</Button>
@@ -44,7 +49,8 @@ class Home extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  recipes: recipesSelector(state)
+  recipes: recipesSelector(state),
+  user: state.auth.user
 })
 
 const mapDispatchToProps = {}
