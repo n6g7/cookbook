@@ -35,9 +35,10 @@
     },
 
     "recipes": {
+      ".read": true,
+
       "$rid": {
-        ".read": true,
-        ".write": false,
+        ".write": true,
 
         "calories": {
           ".validate": "newData.isNumber()"
