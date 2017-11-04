@@ -7,7 +7,8 @@ import styled from 'styled-components'
 import {
   AddRecipe,
   Home,
-  Login
+  Login,
+  Recipe
 } from '@pages'
 
 const Container = styled.div`
@@ -40,6 +41,7 @@ class App extends PureComponent {
       { loggedIn &&
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route path='/recipes/:id' component={Recipe} />
           <Route path='/recipes/create' component={AddRecipe} />
         </Switch>
       }
