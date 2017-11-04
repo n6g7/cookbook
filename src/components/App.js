@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 
 import {
@@ -33,7 +33,8 @@ class App extends PureComponent {
     return <Container>
       { !loggedIn &&
         <Switch>
-          <Route path='/' component={Login} />
+          <Route exact path='/' component={Login} />
+          <Redirect to='/' />
         </Switch>
       }
       { loggedIn &&
