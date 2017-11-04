@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 
 import basket from '@assets/basket.svg'
 import hat from '@assets/hat.svg'
@@ -12,6 +13,18 @@ import {
   recipesSelector
 } from '@selectors'
 
+const ButtonList = styled.nav`
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: ${p => 3 * p.theme.spacing}px 0;
+
+  ${Button}, ${Link} {
+    margin-bottom: ${p => p.theme.spacing}px;
+    width: auto;
+  }
+`
+
 class Home extends PureComponent {
   static propTypes = {
     ingredients: PropTypes.array.isRequired,
@@ -20,8 +33,10 @@ class Home extends PureComponent {
 
   render () {
     return <BlankPage title='Hello Charlotte, what do you want to do today?'>
-      <Link to='/recipes/create' icon={hat} colour='blue'>Add a new recipe</Link>
-      <Button icon={basket}>Prepare my groceries</Button>
+      <ButtonList>
+        <Link to='/recipes/create' icon={hat} colour='blue'>Add a new recipe</Link>
+        <Button icon={basket}>Prepare my groceries</Button>
+      </ButtonList>
     </BlankPage>
   }
 }
