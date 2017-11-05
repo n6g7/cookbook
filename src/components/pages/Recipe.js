@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import basket from '@assets/basket.svg'
 import penpaper from '@assets/penpaper.svg'
 import { Banner, Button, HealthScoreLabel, Label } from '@atoms'
+import { recipeSelector } from '@selectors/recipes'
 import { BannerPage } from '@templates'
 
 const Title = styled(Label)`
@@ -57,8 +58,8 @@ class Recipe extends PureComponent {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  recipe: state.recipes.list[ownProps.match.params.id]
+const mapStateToProps = state => ({
+  recipe: recipeSelector(state)
 })
 const mapDispatchToProps = {}
 
