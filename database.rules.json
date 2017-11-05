@@ -1,5 +1,26 @@
 {
   "rules": {
+    "baskets": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid",
+
+        "$bid": {
+          "archived": {
+            ".validate": "newData.isBoolean()"
+          },
+          "name": {
+            ".validate": "newData.isString() && newData.val().length > 0"
+          },
+          "recipes": {
+            "$rid": {
+              ".validate": "root.child('recipes/' + $rid).exists() && newData.isNumber()"
+            }
+          }
+        }
+      }
+    },
+
     "categories": {
       ".read": "auth != null",
       ".write": false,
