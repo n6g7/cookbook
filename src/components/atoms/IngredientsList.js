@@ -6,7 +6,7 @@ const List = styled.ul`
   display: flex;
   flex-flow: column nowrap;
   list-style: none;
-  margin: 0 0 ${p => 3 * p.theme.spacing}px;
+  margin: ${p => 3 * p.theme.spacing}px 0;
   padding: 0;
 
   li {
@@ -20,8 +20,10 @@ class IngredientsList extends PureComponent {
   }
 
   render () {
-    return <List>
-      {this.props.children.map((ingredient, index) =>
+    const { children, ...props } = this.props
+
+    return <List {...props}>
+      {children.map((ingredient, index) =>
         <li key={index}>
           {ingredient}
         </li>

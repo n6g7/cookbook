@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const Quantity = styled.span`
   margin-right: ${p => 2 * p.theme.spacing}px;
-  width: ${p => 5 * p.theme.spacing}px;
+  min-width: ${p => 7 * p.theme.spacing}px;
 `
 const Unit = styled.span`
   color: ${p => p.theme.text.faded};
