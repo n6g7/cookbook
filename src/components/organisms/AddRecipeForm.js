@@ -10,6 +10,7 @@ import save from '@assets/save.svg'
 import {
   Button,
   Ingredient,
+  IngredientsList,
   Input,
   Label,
   Link,
@@ -25,18 +26,6 @@ const ButtonRow = styled.div`
 
   button {
     margin-right: ${p => p.theme.spacing}px;
-  }
-`
-
-const IngredientsList = styled.ul`
-  display: flex;
-  flex-flow: column nowrap;
-  list-style: none;
-  margin: 0 0 ${p => 3 * p.theme.spacing}px;
-  padding: 0;
-
-  li {
-    margin-bottom: ${p => p.theme.spacing}px;
   }
 `
 
@@ -60,20 +49,26 @@ class AddRecipeForm extends PureComponent {
 
       <Label>What are the ingredients?</Label>
       { ingredients.length > 0 &&
-        <div>
-          <IngredientsList>
+        [
+          <IngredientsList key='list'>
             { ingredients.map(ingredient =>
-              <li key={ingredient.id}>
-                <Ingredient
-                  name={ingredient.name}
-                  quantity={ingredient.value}
-                  unit={ingredient.unit}
-                />
-              </li>
+              <Ingredient
+                key={ingredient.id}
+                name={ingredient.name}
+                quantity={ingredient.value}
+                unit={ingredient.unit}
+              />
             )}
-          </IngredientsList>
-          <Link to='/recipes/create/ingredients' icon={penpaper} colour='blue'>Edit ingredients</Link>
-        </div>
+          </IngredientsList>,
+          <Link
+            to='/recipes/create/ingredients'
+            icon={penpaper}
+            colour='blue'
+            key='edit'
+          >
+            Edit ingredients
+          </Link>
+        ]
       }
       { ingredients.length === 0 &&
         <Link to='/recipes/create/ingredients' icon={plus} colour='blue'>Add ingredients</Link>
