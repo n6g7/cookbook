@@ -5,7 +5,16 @@ import styled from 'styled-components'
 
 import basket from '@assets/basket.svg'
 import penpaper from '@assets/penpaper.svg'
-import { Banner, Button, HealthScoreLabel, Label } from '@atoms'
+import {
+  Banner,
+  Button,
+  HealthScoreLabel,
+  Ingredient,
+  IngredientsList,
+  Input,
+  Label,
+  SubLabel
+} from '@atoms'
 import { recipeSelector } from '@selectors/recipes'
 import { BannerPage } from '@templates'
 
@@ -33,14 +42,24 @@ class Recipe extends PureComponent {
     recipe: PropTypes.object.isRequired
   }
 
+  state = {
+    servings: 1
+  }
+
+  onChange = event => this.setState({
+    servings: event.target.value
+  })
+
   render () {
     const {
       calories,
       healthScore,
       image,
+      ingredients,
       name,
       preparationTime
     } = this.props.recipe
+    const { servings } = this.state
 
     const banner = <Banner image={image}>
       <HealthScoreLabel healthScore={healthScore} />
@@ -54,6 +73,26 @@ class Recipe extends PureComponent {
         <Button icon={basket}>Add to grocery list</Button>
         <Button icon={penpaper} colour='grey'>Edit</Button>
       </ButtonList>
+
+      <SubLabel>Ingredients</SubLabel>
+
+      <Input
+        onChange={this.onChange}
+        value={this.state.servings}
+        type='number'
+        colour='blue'
+        suffix='servings'
+      />
+
+      <IngredientsList>
+        { ingredients.map(ingredient =>
+          <Ingredient
+            name={ingredient.name}
+            quantity={servings * ingredient.value}
+            unit={ingredient.unit}
+          />
+        )}
+      </IngredientsList>
     </BannerPage>
   }
 }
