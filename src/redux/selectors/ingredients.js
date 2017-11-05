@@ -2,7 +2,7 @@ import { createSelector } from 'reselect'
 import { getFormValues } from 'redux-form'
 import { objectToArray } from './base'
 
-const rawIngredientsSelector = state => state.ingredients.list
+export const rawIngredientsSelector = state => state.ingredients.list
 const rawFormSelector = getFormValues('createRecipe')
 
 export const ingredientsSelector = createSelector(
