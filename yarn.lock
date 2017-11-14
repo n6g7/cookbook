@@ -7353,15 +7353,11 @@ redux-form@^7.1.2:
     lodash-es "^4.17.3"
     prop-types "^15.5.9"
 
-redux-saga-firebase@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/redux-saga-firebase/-/redux-saga-firebase-0.6.1.tgz#e16b1001bef40ed9a5aa2c0ade179aefcac3196f"
+redux-saga-firebase@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/redux-saga-firebase/-/redux-saga-firebase-0.7.0.tgz#0dbd3bcf6f3e2db3194fde5520b3944b2e5c286f"
   dependencies:
-    redux-saga "^0.15.4"
-
-redux-saga@^0.15.4:
-  version "0.15.4"
-  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.15.4.tgz#27982a947280053b7ecbb5d3170c837a5fe6b261"
+    redux-saga "^0.16.0"
 
 redux-saga@^0.16.0:
   version "0.16.0"

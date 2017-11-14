@@ -9,7 +9,9 @@ function * syncBasketsSaga ({ user }) {
   yield fork(
     rsf.database.sync,
     `baskets/${user.uid}`,
-    syncBaskets
+    {
+      successActionCreator: syncBaskets
+    }
   )
 }
 

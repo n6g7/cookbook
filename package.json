@@ -40,7 +40,7 @@
     "redux": "^3.7.2",
     "redux-form": "^7.1.2",
     "redux-saga": "^0.16.0",
-    "redux-saga-firebase": "^0.6.1",
+    "redux-saga-firebase": "^0.7.0",
     "reselect": "^3.0.1",
     "styled-components": "^2.2.2"
   },

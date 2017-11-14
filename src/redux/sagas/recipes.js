@@ -28,7 +28,13 @@ function * createRecipeSaga ({ image, recipe }) {
 }
 
 export default function * recipesSaga () {
-  yield fork(rsf.database.sync, 'recipes', syncRecipes)
+  yield fork(
+    rsf.database.sync,
+    'recipes',
+    {
+      successActionCreator: syncRecipes
+    }
+  )
 
   yield takeEvery(types.CREATE_RECIPE.REQUEST, createRecipeSaga)
 }

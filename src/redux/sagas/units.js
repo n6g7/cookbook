@@ -5,5 +5,11 @@ import rsf from '../rsf'
 import { syncUnits } from '@actions/units'
 
 export default function * unitsSaga () {
-  yield fork(rsf.database.sync, 'units', syncUnits)
+  yield fork(
+    rsf.database.sync,
+    'units',
+    {
+      successActionCreator: syncUnits
+    }
+  )
 }
