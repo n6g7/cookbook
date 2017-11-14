@@ -8,6 +8,7 @@ import penpaper from '@assets/penpaper.svg'
 import {
   Banner,
   Button,
+  ButtonList,
   HealthScoreLabel,
   Ingredient,
   IngredientsList,
@@ -25,15 +26,6 @@ const Title = styled(Label)`
 const Subtitle = styled.p`
   color: ${p => p.theme.text.faded};
   margin: ${p => 1.5 * p.theme.spacing}px 0 ${p => 3 * p.theme.spacing}px;
-`
-
-const ButtonList = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-
-  ${Button} {
-    margin-right: ${p => p.theme.spacing}px;
-  }
 `
 
 class RecipeDetails extends PureComponent {
@@ -69,7 +61,7 @@ class RecipeDetails extends PureComponent {
       <Title>{ name }</Title>
       <Subtitle>{`${calories} kcal  ${preparationTime} min`}</Subtitle>
 
-      <ButtonList>
+      <ButtonList row>
         <Button icon={basket}>Add to grocery list</Button>
         <Button icon={penpaper} colour='grey'>Edit</Button>
       </ButtonList>
