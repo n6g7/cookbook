@@ -5,10 +5,9 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 
 import {
-  AddRecipe,
   Home,
   Login,
-  Recipe
+  Recipes
 } from '@pages'
 
 const Container = styled.div`
@@ -41,8 +40,7 @@ class App extends PureComponent {
       { loggedIn &&
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/recipes/create' component={AddRecipe} />
-          <Route path='/recipes/:id' component={Recipe} />
+          <Route path='/recipes' component={Recipes} />
         </Switch>
       }
     </Container>

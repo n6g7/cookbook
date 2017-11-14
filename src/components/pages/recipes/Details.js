@@ -36,7 +36,7 @@ const ButtonList = styled.div`
   }
 `
 
-class Recipe extends PureComponent {
+class RecipeDetails extends PureComponent {
   static propTypes = {
     match: PropTypes.object.isRequired,
     recipe: PropTypes.object.isRequired
@@ -102,4 +102,4 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = {}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Recipe)
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetails)
