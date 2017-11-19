@@ -3,7 +3,7 @@ import { objectToArray } from './base'
 import { rawIngredientsSelector } from './ingredients'
 import { recipeIdSelector } from './router'
 
-const rawRecipesSelector = state => state.recipes.list
+export const rawRecipesSelector = state => state.recipes.list
 
 export const recipesSelector = createSelector(
   rawRecipesSelector,
