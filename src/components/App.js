@@ -5,6 +5,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 
 import {
+  Baskets,
   Home,
   Login,
   Recipes
@@ -40,6 +41,7 @@ class App extends PureComponent {
       { loggedIn &&
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route path='/baskets' component={Baskets} />
           <Route path='/recipes' component={Recipes} />
         </Switch>
       }

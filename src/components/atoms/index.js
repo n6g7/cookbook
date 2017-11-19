@@ -1,4 +1,5 @@
 export { default as Banner } from './Banner'
+export { default as Basket } from './Basket'
 export { default as Button } from './Button'
 export { default as ButtonList } from './ButtonList'
 export { default as FileButton } from './FileButton'
