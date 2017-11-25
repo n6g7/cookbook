@@ -2,8 +2,8 @@
   "rules": {
     "baskets": {
       "$uid": {
-        ".read": "auth.uid == $uid",
-        ".write": "auth.uid == $uid",
+        ".read": "auth.uid == $uid && root.child('users/'+auth.uid+'/access').val() == true",
+        ".write": "auth.uid == $uid && root.child('users/'+auth.uid+'/access').val() == true",
 
         "$bid": {
           "archived": {
@@ -22,7 +22,7 @@
     },
 
     "categories": {
-      ".read": "auth != null",
+      ".read": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
       ".write": false,
 
       "$cid": {
@@ -33,7 +33,7 @@
     },
 
     "ingredients": {
-      ".read": "auth != null",
+      ".read": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
       ".write": false,
 
       "$iid": {
@@ -56,10 +56,10 @@
     },
 
     "recipes": {
-      ".read": "auth != null",
+      ".read": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
 
       "$rid": {
-        ".write": "auth != null",
+        ".write": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
 
         "calories": {
           ".validate": "newData.isNumber()"
@@ -88,7 +88,7 @@
     },
 
     "units": {
-      ".read": "auth != null",
+      ".read": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
       ".write": false,
 
       "$uid": {
