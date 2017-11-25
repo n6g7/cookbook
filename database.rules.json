@@ -99,6 +99,17 @@
           ".validate": "newData.isString() && newData.val().length > 0"
         }
       }
+    },
+
+    "users": {
+      ".read": false,
+      ".write": false,
+
+      "$uid": {
+        "access": {
+          ".validate": "newData.isBoolean()"
+        }
+      }
     }
   }
 }
