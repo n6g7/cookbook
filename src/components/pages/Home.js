@@ -36,7 +36,7 @@ class Home extends PureComponent {
     >
       <ButtonList>
         <Link to='/recipes/create' icon={hat} colour='blue'>Add a new recipe</Link>
-        <Button icon={basket}>Prepare my groceries</Button>
+        <Link to='/baskets' icon={basket}>Prepare my groceries</Link>
       </ButtonList>
 
       <RecipeList>
