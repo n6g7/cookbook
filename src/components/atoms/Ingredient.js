@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   align-items: center;
+  color: ${p => p.checked ? p.theme.text.faded : 'inherit'};
   display: flex;
   flex-flow: row nowrap;
   height: 20px;
@@ -22,18 +23,33 @@ const Name = styled.span``
 
 class Ingredient extends PureComponent {
   static propTypes = {
+    checkable: PropTypes.bool.isRequired,
+    checked: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired,
-    quantity: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    quantity: PropTypes.number.isRequired,
     unit: PropTypes.string.isRequired
+  }
+
+  static defaultProps = {
+    checkable: false,
+    checked: false
+  }
+
+  onChange = event => {
+    if (this.props.onChange) {
+      this.props.onChange(event.target.checked)
+    }
   }
 
   capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
 
   render () {
-    const { name, quantity, unit } = this.props
+    const { checkable, checked, name, quantity, unit } = this.props
 
-    return <Container>
+    return <Container checked={checked}>
       <Quantity>
+        {checkable && <input type='checkbox' onChange={this.onChange} checked={checked} />}
         {quantity}
         <Unit>{unit}</Unit>
       </Quantity>
