@@ -6,6 +6,8 @@ import { types as authTypes } from '@actions/auth'
 import { syncBaskets } from '@actions/baskets'
 
 function * syncBasketsSaga ({ user }) {
+  if (!user) return
+
   yield fork(
     rsf.database.sync,
     `baskets/${user.uid}`,

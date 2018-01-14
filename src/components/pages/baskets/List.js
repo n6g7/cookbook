@@ -1,12 +1,19 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
+import { Link as RouterLink } from 'react-router-dom'
 
 import basket from '@assets/basket.svg'
 import hat from '@assets/hat.svg'
 import { Basket, Button, ButtonList, Link } from '@atoms'
 import { basketsSelector } from '@selectors/baskets'
 import { BlankPage } from '@templates'
+
+const ItemLink = styled(RouterLink)`
+  color: inherit;
+  text-decoration: none;
+`
 
 class BasketList extends PureComponent {
   static propTypes = {
@@ -15,7 +22,7 @@ class BasketList extends PureComponent {
   }
 
   render () {
-    const { baskets } = this.props
+    const { baskets, match } = this.props
 
     return <BlankPage title='Your grocery lists'>
       <ButtonList>
@@ -24,7 +31,9 @@ class BasketList extends PureComponent {
       </ButtonList>
 
       { baskets.map(basket =>
-        <Basket basket={basket} key={basket.id} />
+        <ItemLink to={`${match.url}/${basket.id}`} key={basket.id}>
+          <Basket basket={basket} />
+        </ItemLink>
       )}
     </BlankPage>
   }
