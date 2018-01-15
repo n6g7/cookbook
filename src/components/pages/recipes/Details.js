@@ -79,6 +79,7 @@ class RecipeDetails extends PureComponent {
       <IngredientsList>
         { ingredients.map(ingredient =>
           <Ingredient
+            key={ingredient.id}
             name={ingredient.name}
             quantity={servings * ingredient.value}
             unit={ingredient.unit}
