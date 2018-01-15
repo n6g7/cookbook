@@ -17,6 +17,7 @@ export const syncBaskets = baskets => ({
 export const createBasket = (basket) => ({
   type: types.CREATE_BASKET.REQUEST,
   basket: {
+    archive: false,
     ...basket,
     recipes: _mapValues(basket.recipes, parseInt)
   }
