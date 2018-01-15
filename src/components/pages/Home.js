@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import basket from '@assets/basket.svg'
 import hat from '@assets/hat.svg'
-import { Button, ButtonList, Link } from '@atoms'
+import { ButtonList, Link } from '@atoms'
 import { RecipeCard } from '@molecules'
 import { recipesSelector } from '@selectors'
 import { BlankPage } from '@templates'
