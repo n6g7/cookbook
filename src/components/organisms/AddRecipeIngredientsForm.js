@@ -5,23 +5,8 @@ import { reduxForm, Field } from 'redux-form'
 import styled from 'styled-components'
 
 import save from '@assets/save.svg'
-import { Input, Link } from '@atoms'
+import { FieldList, Input, Link } from '@atoms'
 import { ingredientsSelector } from '@selectors'
-
-const List = styled.ul`
-  display: flex;
-  flex-flow: column nowrap;
-  list-style: none;
-  margin: 0 0 ${p => 4 * p.theme.spacing}px;
-  padding: 0;
-
-  li {
-    align-items: center;
-    display: flex;
-    flex-flow: row nowrap;
-    margin-bottom: ${p => p.theme.spacing}px;
-  }
-`
 
 const StyledInput = styled(Input)`
   margin-right: ${p => p.theme.spacing}px;
@@ -42,7 +27,7 @@ class AddRecipeIngredientsForm extends PureComponent {
     } = this.props
 
     return <form onSubmit={handleSubmit}>
-      <List>
+      <FieldList>
         {ingredients.map(ingredient =>
           <li key={ingredient.id}>
             <Field
@@ -55,7 +40,7 @@ class AddRecipeIngredientsForm extends PureComponent {
             {this.capitalize(ingredient.name)}
           </li>
         )}
-      </List>
+      </FieldList>
 
       <Link to='/recipes/create' icon={save} colour='blue'>Add ingredients to the recipe</Link>
     </form>
