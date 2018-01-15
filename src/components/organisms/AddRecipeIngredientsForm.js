@@ -2,17 +2,11 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { reduxForm, Field } from 'redux-form'
-import styled from 'styled-components'
 
 import save from '@assets/save.svg'
 import { FieldList, Input, Link } from '@atoms'
 import { ingredientsSelector } from '@selectors'
 import capitalize from '@services/capitalize'
-
-const StyledInput = styled(Input)`
-  margin-right: ${p => p.theme.spacing}px;
-  width: 76px;
-`
 
 class AddRecipeIngredientsForm extends PureComponent {
   static propTypes = {
@@ -31,7 +25,7 @@ class AddRecipeIngredientsForm extends PureComponent {
           <li key={ingredient.id}>
             <Field
               name={`ingredients.${ingredient.id}`}
-              component={StyledInput}
+              component={Input}
               type='number'
               colour='yellow'
               suffix={ingredient.unit}

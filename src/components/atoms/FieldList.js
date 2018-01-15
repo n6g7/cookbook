@@ -12,6 +12,11 @@ const FieldList = styled.ul`
     display: flex;
     flex-flow: row nowrap;
     margin-bottom: ${p => p.theme.spacing}px;
+
+    & > *:first-child {
+      margin-right: ${p => p.theme.spacing}px;
+      width: 76px;
+    }
   }
 `
 
