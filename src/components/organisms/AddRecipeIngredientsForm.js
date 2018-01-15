@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import save from '@assets/save.svg'
 import { FieldList, Input, Link } from '@atoms'
 import { ingredientsSelector } from '@selectors'
+import capitalize from '@services/capitalize'
 
 const StyledInput = styled(Input)`
   margin-right: ${p => p.theme.spacing}px;
@@ -17,8 +18,6 @@ class AddRecipeIngredientsForm extends PureComponent {
   static propTypes = {
     ingredients: PropTypes.array.isRequired
   }
-
-  capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
 
   render () {
     const {
@@ -37,7 +36,7 @@ class AddRecipeIngredientsForm extends PureComponent {
               colour='yellow'
               suffix={ingredient.unit}
             />
-            {this.capitalize(ingredient.name)}
+            {capitalize(ingredient.name)}
           </li>
         )}
       </FieldList>
