@@ -6,7 +6,7 @@ import { Link as RouterLink } from 'react-router-dom'
 
 import basket from '@assets/basket.svg'
 import hat from '@assets/hat.svg'
-import { Basket, Button, ButtonList, Link } from '@atoms'
+import { Basket, ButtonList, Link } from '@atoms'
 import { basketsSelector } from '@selectors/baskets'
 import { BlankPage } from '@templates'
 
@@ -27,7 +27,7 @@ class BasketList extends PureComponent {
     return <BlankPage title='Your grocery lists'>
       <ButtonList>
         <Link to='/' colour='blue' icon={hat}>Look at my recipes</Link>
-        <Button icon={basket}>Create a new grocery list</Button>
+        <Link to={`${match.url}/create`} icon={basket}>Create a new grocery list</Link>
       </ButtonList>
 
       { baskets.map(basket =>
