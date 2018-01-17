@@ -10,6 +10,7 @@ import {
   Login,
   Recipes
 } from '@pages'
+import { loggedInSelector } from '@selectors'
 
 const Container = styled.div`
   margin: auto;
@@ -50,7 +51,7 @@ class App extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.loggedIn
+  loggedIn: loggedInSelector(state)
 })
 
 export default connect(mapStateToProps)(App)

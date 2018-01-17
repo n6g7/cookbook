@@ -7,7 +7,7 @@ import basket from '@assets/basket.svg'
 import hat from '@assets/hat.svg'
 import { ButtonList, Link } from '@atoms'
 import { RecipeCard } from '@molecules'
-import { recipesSelector } from '@selectors'
+import { userSelector, recipesSelector } from '@selectors'
 import { BlankPage } from '@templates'
 
 const RecipeList = styled.nav`
@@ -50,7 +50,7 @@ class Home extends PureComponent {
 
 const mapStateToProps = state => ({
   recipes: recipesSelector(state),
-  user: state.auth.user
+  user: userSelector(state)
 })
 
 const mapDispatchToProps = {}
