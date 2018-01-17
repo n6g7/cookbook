@@ -23,7 +23,7 @@
 
     "categories": {
       ".read": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
-      ".write": false,
+      ".write": "auth != null && root.child('users/'+auth.uid+'/admin').val() == true",
 
       "$cid": {
         "name": {
@@ -34,7 +34,7 @@
 
     "ingredients": {
       ".read": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
-      ".write": false,
+      ".write": "auth != null && root.child('users/'+auth.uid+'/admin').val() == true",
 
       "$iid": {
         "category": {
@@ -89,7 +89,7 @@
 
     "units": {
       ".read": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
-      ".write": false,
+      ".write": "auth != null && root.child('users/'+auth.uid+'/admin').val() == true",
 
       "$uid": {
         "name": {
@@ -107,6 +107,9 @@
 
       "$uid": {
         "access": {
+          ".validate": "newData.isBoolean()"
+        },
+        "admin": {
           ".validate": "newData.isBoolean()"
         }
       }
