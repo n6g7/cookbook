@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { login } from 'rsf-auth/actions'
 
-import { login } from '@actions/auth'
 import basket from '@assets/basket.svg'
 import penpaper from '@assets/penpaper.svg'
 import { Button, ButtonList } from '@atoms'
