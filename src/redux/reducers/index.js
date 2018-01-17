@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 import { routerReducer } from 'react-router-redux'
+import { reducer as auth } from 'rsf-auth'
 
-import auth from './auth'
 import baskets from './baskets'
 import categories from './categories'
 import ingredients from './ingredients'

@@ -1,4 +1,7 @@
-import auth from './auth'
+import { fork } from 'redux-saga/effects'
+import { saga as auth } from 'rsf-auth'
+import rsf, { authProvider } from '../rsf'
+
 import baskets from './baskets'
 import categories from './categories'
 import ingredients from './ingredients'
@@ -7,11 +10,11 @@ import units from './units'
 
 export default function * rootSaga () {
   yield [
-    auth(),
-    baskets(),
-    categories(),
-    ingredients(),
-    recipes(),
-    units()
+    fork(auth, rsf, authProvider),
+    fork(baskets),
+    fork(categories),
+    fork(ingredients),
+    fork(recipes),
+    fork(units)
   ]
 }
