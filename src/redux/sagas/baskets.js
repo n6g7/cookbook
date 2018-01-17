@@ -1,10 +1,10 @@
 import { call, fork, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
 import { reset } from 'redux-form'
 import { push } from 'react-router-redux'
+import { types as authTypes } from 'rsf-auth'
 
 import rsf from '../rsf'
 
-import { types as authTypes } from '@actions/auth'
 import {
   createBasketSuccess,
   createBasketFailure,
