@@ -7,7 +7,7 @@ import { ThemeProvider, injectGlobal } from 'styled-components'
 
 import history from '@history'
 import App from './components/App'
-import store from './redux/store'
+import store from '@redux/store'
 import theme from './theme'
 
 injectGlobal`
