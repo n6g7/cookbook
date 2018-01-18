@@ -6,7 +6,7 @@ const initialState = {
 
 export default function unitsReducer (state = initialState, action) {
   switch (action.type) {
-    case types.SYNC_RECIPES:
+    case types.SYNC_UNITS:
       return {
         ...state,
         list: action.units
