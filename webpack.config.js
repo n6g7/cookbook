@@ -70,6 +70,11 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    historyApiFallback: true
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/admin/, to: '/admin.html' },
+        { from: /./, to: '/index.html' }
+      ]
+    }
   }
 }
