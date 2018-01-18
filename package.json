@@ -43,6 +43,8 @@
     "redux-saga-firebase": "^0.7.0",
     "reselect": "^3.0.1",
     "rsf-auth": "^0.0.3",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.77.2",
     "styled-components": "^2.2.3"
   },
   "devDependencies": {
