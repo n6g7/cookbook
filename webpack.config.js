@@ -1,12 +1,14 @@
 const path = require('path')
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
-  entry: ['babel-polyfill', './index.js'],
+  context: __dirname,
+  entry: {
+    app: ['babel-polyfill', './src/index.js']
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.[name].js'
   },
   resolve: {
     alias: {
