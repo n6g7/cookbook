@@ -3,7 +3,8 @@ const path = require('path')
 module.exports = {
   context: __dirname,
   entry: {
-    app: ['babel-polyfill', './src/index.js']
+    app: ['babel-polyfill', './src/index.js'],
+    admin: ['babel-polyfill', './admin/index.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -41,6 +42,20 @@ module.exports = {
         use: [
           'raw-loader',
           'img-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(eot|png|svg|ttf|woff2?)$/,
+        include: /semantic-ui-css/,
+        use: [
+          'url-loader'
         ]
       },
       {
