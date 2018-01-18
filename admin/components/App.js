@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, Route, Switch } from 'react-router-dom'
-import { Container, Menu } from 'semantic-ui-react'
+import { Container, Icon, Menu } from 'semantic-ui-react'
 
 import {
   Categories,
@@ -16,6 +16,13 @@ const App = ({ match }) => <Container>
     <Menu.Item as={NavLink} to={`${match.url}ingredients`}>Ingredients</Menu.Item>
     <Menu.Item as={NavLink} to={`${match.url}categories`}>Categories</Menu.Item>
     <Menu.Item as={NavLink} to={`${match.url}units`}>Units</Menu.Item>
+
+    <Menu.Menu position='right'>
+      <Menu.Item as='a' href='/'>
+        <Icon name='browser' />
+        Back to the site
+      </Menu.Item>
+    </Menu.Menu>
   </Menu>
 
   <Switch>
