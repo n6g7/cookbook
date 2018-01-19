@@ -3,7 +3,11 @@
     "public": "dist",
     "rewrites": [
       {
-        "source": "/admin**",
+        "source": "/admin",
+        "destination": "/admin.html"
+      },
+      {
+        "source": "/admin/**",
         "destination": "/admin.html"
       },
       {
