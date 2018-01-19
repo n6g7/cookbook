@@ -8,7 +8,7 @@
     "deploy": "firebase deploy",
     "dev": "webpack-dev-server",
     "pretest": "standard",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "repository": {
     "type": "git",
