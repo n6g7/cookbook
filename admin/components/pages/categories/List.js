@@ -1,22 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Table } from 'semantic-ui-react'
 
-import { Table } from '../../molecules'
 import { categoriesSelector } from '@selectors'
 
-const CategoryHeader = ({ HeaderCell, Row }) => <Row>
-  <HeaderCell>Name</HeaderCell>
-</Row>
+const CategoriesList = ({ match, categories }) => <Table celled selectable striped>
+  <Table.Header>
+    <Table.Row>
+      <Table.HeaderCell>Name</Table.HeaderCell>
+    </Table.Row>
+  </Table.Header>
 
-const CategoryRow = ({ Cell, item, Row }) => <Row>
-  <Cell>{ item.name }</Cell>
-</Row>
-
-const CategoriesList = ({ categories }) => <Table
-  header={CategoryHeader}
-  items={categories}
-  component={CategoryRow}
-/>
+  <Table.Body>
+    { categories.map(category =>
+      <Table.Row key={category.id}>
+        <Table.Cell>{ category.name }</Table.Cell>
+      </Table.Row>
+    )}
+  </Table.Body>
+</Table>
 
 const mapStateToProps = state => ({
   categories: categoriesSelector(state)
