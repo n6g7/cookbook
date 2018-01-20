@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Table } from 'semantic-ui-react'
+import { Button, Icon, Table } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import { ingredientsSelector } from '@selectors'
 
@@ -26,6 +27,23 @@ const IngredientsList = ({ match, ingredients }) => <Table celled selectable str
       </Table.Row>
     )}
   </Table.Body>
+
+  <Table.Footer>
+    <Table.Row>
+      <Table.HeaderCell colSpan='5'>
+        <Button
+          as={Link}
+          to={`${match.url}/create`}
+          floated='right'
+          icon
+          labelPosition='left'
+          primary
+        >
+          <Icon name='add circle' /> Add Ingredient
+        </Button>
+      </Table.HeaderCell>
+    </Table.Row>
+  </Table.Footer>
 </Table>
 
 const mapStateToProps = state => ({
