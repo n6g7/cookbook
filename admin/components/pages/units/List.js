@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Table } from 'semantic-ui-react'
+import { Button, Icon, Table } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import { unitsSelector } from '@selectors'
 
@@ -20,6 +21,23 @@ const UnitsList = ({ match, units }) => <Table celled selectable striped>
       </Table.Row>
     )}
   </Table.Body>
+
+  <Table.Footer>
+    <Table.Row>
+      <Table.HeaderCell colSpan='2'>
+        <Button
+          as={Link}
+          to={`${match.url}/create`}
+          floated='right'
+          icon
+          labelPosition='left'
+          primary
+        >
+          <Icon name='add circle' /> Add Unit
+        </Button>
+      </Table.HeaderCell>
+    </Table.Row>
+  </Table.Footer>
 </Table>
 
 const mapStateToProps = state => ({
