@@ -11,12 +11,14 @@ class UnitForm extends PureComponent {
         name='name'
         component={Form.Input}
         label='Name'
+        placeholder='Name'
       />
 
       <Field
         name='symbol'
         component={Form.Input}
         label='Symbol'
+        placeholder='Symbol'
       />
 
       <Button type='submit' primary>Save</Button>

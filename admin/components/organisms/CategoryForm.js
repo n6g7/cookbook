@@ -11,6 +11,7 @@ class CategoryForm extends PureComponent {
         name='name'
         component={Form.Input}
         label='Name'
+        placeholder='Name'
       />
 
       <Button type='submit' primary>Save</Button>
