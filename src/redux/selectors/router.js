@@ -12,5 +12,7 @@ const createRouterSelector = pathRegex => createSelector(
 )
 
 export const basketIdSelector = createRouterSelector(/^\/baskets\/([a-zA-Z0-9_-]+)(\/|$)/)
-
+export const categoryIdSelector = createRouterSelector(/^\/categories\/([a-zA-Z0-9_-]+)(\/|$)/)
+export const ingredientIdSelector = createRouterSelector(/^\/ingredients\/([a-zA-Z0-9_-]+)(\/|$)/)
 export const recipeIdSelector = createRouterSelector(/^\/recipes\/([a-zA-Z0-9_-]+)(\/|$)/)
+export const unitIdSelector = createRouterSelector(/^\/units\/([a-zA-Z0-9_-]+)(\/|$)/)

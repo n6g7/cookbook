@@ -2,6 +2,7 @@ import { createSelector } from 'reselect'
 import { getFormValues } from 'redux-form'
 import { objectToArray } from './base'
 import { rawCategoriesSelector } from './categories'
+import { ingredientIdSelector } from './router'
 import { rawUnitsSelector } from './units'
 
 export const rawIngredientsSelector = state => state.ingredients.list
@@ -37,4 +38,10 @@ export const formIngredientsSelector = createSelector(
         value: formValues.ingredients[ingredient.id]
       }))
   }
+)
+
+export const ingredientSelector = createSelector(
+  ingredientsSelector,
+  ingredientIdSelector,
+  (ingredients, id) => ingredients.find(ingredient => ingredient.id === id)
 )
