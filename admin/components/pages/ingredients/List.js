@@ -19,7 +19,9 @@ const IngredientsList = ({ match, ingredients }) => <Table celled selectable str
   <Table.Body>
     { ingredients.map(ingredient =>
       <Table.Row key={ingredient.id}>
-        <Table.Cell>{ ingredient.name }</Table.Cell>
+        <Table.Cell selectable>
+          <Link to={`${match.url}/${ingredient.id}`}>{ ingredient.name }</Link>
+        </Table.Cell>
         <Table.Cell>
           <Link to={`/categories/${ingredient.category.id}`}>{ ingredient.category.name }</Link>
         </Table.Cell>
