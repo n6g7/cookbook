@@ -20,7 +20,9 @@ const IngredientsList = ({ match, ingredients }) => <Table celled selectable str
     { ingredients.map(ingredient =>
       <Table.Row key={ingredient.id}>
         <Table.Cell>{ ingredient.name }</Table.Cell>
-        <Table.Cell>{ ingredient.category.name }</Table.Cell>
+        <Table.Cell>
+          <Link to={`/categories/${ingredient.category.id}`}>{ ingredient.category.name }</Link>
+        </Table.Cell>
         <Table.Cell>
           <Link to={`/units/${ingredient.unit.id}`}>{ ingredient.unit.name }</Link>
         </Table.Cell>

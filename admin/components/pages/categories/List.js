@@ -15,7 +15,9 @@ const CategoriesList = ({ match, categories }) => <Table celled selectable strip
   <Table.Body>
     { categories.map(category =>
       <Table.Row key={category.id}>
-        <Table.Cell>{ category.name }</Table.Cell>
+        <Table.Cell selectable>
+          <Link to={`${match.url}/${category.id}`}>{ category.name }</Link>
+        </Table.Cell>
       </Table.Row>
     )}
   </Table.Body>
