@@ -1,13 +1,27 @@
 import { createSelector } from 'reselect'
 import { getFormValues } from 'redux-form'
 import { objectToArray } from './base'
+import { rawCategoriesSelector } from './categories'
+import { rawUnitsSelector } from './units'
 
 export const rawIngredientsSelector = state => state.ingredients.list
 const rawFormSelector = getFormValues('createRecipe')
 
 export const ingredientsSelector = createSelector(
   rawIngredientsSelector,
-  objectToArray
+  rawCategoriesSelector,
+  rawUnitsSelector,
+  (ingredients, categories, units) => objectToArray(ingredients).map(ing => ({
+    ...ing,
+    category: {
+      ...categories[ing.category],
+      id: ing.category
+    },
+    unit: {
+      ...units[ing.unit],
+      id: ing.unit
+    }
+  }))
 )
 
 export const formIngredientsSelector = createSelector(

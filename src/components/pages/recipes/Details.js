@@ -82,7 +82,7 @@ class RecipeDetails extends PureComponent {
             key={ingredient.id}
             name={ingredient.name}
             quantity={servings * ingredient.value}
-            unit={ingredient.unit}
+            unit={ingredient.unit.symbol}
           />
         )}
       </IngredientsList>

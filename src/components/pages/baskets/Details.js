@@ -41,7 +41,7 @@ class BasketDetails extends PureComponent {
             key={ingredient.id}
             name={ingredient.name}
             quantity={ingredient.value}
-            unit={ingredient.unit}
+            unit={ingredient.unit.symbol}
             checkable
             checked={ingredients[ingredient.id]}
             onChange={val => this.setState({

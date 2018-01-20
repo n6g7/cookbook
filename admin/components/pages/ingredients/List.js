@@ -14,8 +14,8 @@ const IngredientHeader = ({ HeaderCell, Row }) => <Row>
 
 const IngredientRow = ({ Cell, item, Row }) => <Row>
   <Cell>{ item.name }</Cell>
-  <Cell>{ item.category }</Cell>
-  <Cell>{ item.unit }</Cell>
+  <Cell>{ item.category.name }</Cell>
+  <Cell>{ item.unit.name }</Cell>
   <Cell>{ item.cheese && '🧀' }</Cell>
   <Cell>{ item.meat && '🍗' }</Cell>
 </Row>

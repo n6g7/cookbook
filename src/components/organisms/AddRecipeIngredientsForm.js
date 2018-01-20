@@ -28,7 +28,7 @@ class AddRecipeIngredientsForm extends PureComponent {
               component={Input}
               type='number'
               colour='yellow'
-              suffix={ingredient.unit}
+              suffix={ingredient.unit.symbol}
             />
             {capitalize(ingredient.name)}
           </li>
