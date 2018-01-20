@@ -21,7 +21,9 @@ const IngredientsList = ({ match, ingredients }) => <Table celled selectable str
       <Table.Row key={ingredient.id}>
         <Table.Cell>{ ingredient.name }</Table.Cell>
         <Table.Cell>{ ingredient.category.name }</Table.Cell>
-        <Table.Cell>{ ingredient.unit.name }</Table.Cell>
+        <Table.Cell>
+          <Link to={`/units/${ingredient.unit.id}`}>{ ingredient.unit.name }</Link>
+        </Table.Cell>
         <Table.Cell>{ ingredient.cheese && '🧀' }</Table.Cell>
         <Table.Cell>{ ingredient.meat && '🍗' }</Table.Cell>
       </Table.Row>

@@ -16,7 +16,9 @@ const UnitsList = ({ match, units }) => <Table celled selectable striped>
   <Table.Body>
     { units.map(unit =>
       <Table.Row key={unit.id}>
-        <Table.Cell>{ unit.name }</Table.Cell>
+        <Table.Cell selectable>
+          <Link to={`${match.url}/${unit.id}`}>{ unit.name }</Link>
+        </Table.Cell>
         <Table.Cell>{ unit.symbol }</Table.Cell>
       </Table.Row>
     )}
