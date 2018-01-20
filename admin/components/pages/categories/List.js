@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Table } from 'semantic-ui-react'
+import { Button, Icon, Table } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import { categoriesSelector } from '@selectors'
 
@@ -18,6 +19,23 @@ const CategoriesList = ({ match, categories }) => <Table celled selectable strip
       </Table.Row>
     )}
   </Table.Body>
+
+  <Table.Footer>
+    <Table.Row>
+      <Table.HeaderCell>
+        <Button
+          as={Link}
+          to={`${match.url}/create`}
+          floated='right'
+          icon
+          labelPosition='left'
+          primary
+        >
+          <Icon name='add circle' /> Add Category
+        </Button>
+      </Table.HeaderCell>
+    </Table.Row>
+  </Table.Footer>
 </Table>
 
 const mapStateToProps = state => ({
