@@ -62,7 +62,7 @@
         ".write": "auth != null && root.child('users/'+auth.uid+'/access').val() == true",
 
         "calories": {
-          ".validate": "newData.isNumber()"
+          ".validate": "!newData.exists() || newData.isNumber()"
         },
         "healthScore": {
           ".validate": "newData.isNumber()"
