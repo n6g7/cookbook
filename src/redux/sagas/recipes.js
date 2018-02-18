@@ -1,5 +1,5 @@
 import { reset } from 'redux-form'
-import { call, fork, put, takeEvery } from 'redux-saga/effects'
+import { call, fork, put, select, takeEvery } from 'redux-saga/effects'
 import { push } from 'react-router-redux'
 
 import rsf from '../rsf'
@@ -8,8 +8,11 @@ import {
   createRecipeSuccess,
   createRecipeFailure,
   syncRecipes,
-  types
+  types,
+  updateRecipeSuccess,
+  updateRecipeFailure
 } from '@actions/recipes'
+import { recipeIdSelector } from '@selectors/router'
 
 function * createRecipeSaga ({ image, recipe }) {
   try {
@@ -21,9 +24,32 @@ function * createRecipeSaga ({ image, recipe }) {
     })
     yield put(createRecipeSuccess())
     yield put(reset('createRecipe'))
-    yield put(push('/'))
+    yield put(push(`/recipes/${recipeId}`))
   } catch (error) {
     yield put(createRecipeFailure(error))
+  }
+}
+
+function * updateRecipeSaga ({ image, recipe }) {
+  const recipeId = yield select(recipeIdSelector)
+
+  try {
+    yield call(rsf.database.patch, `recipes/${recipeId}`, recipe)
+
+    // Maybe update the image?
+    if (typeof image !== 'string') {
+      const uploadTask = yield call(rsf.storage.uploadFile, `recipes/${recipeId}`, image)
+      const { downloadURL } = yield uploadTask
+      yield call(rsf.database.patch, `recipes/${recipeId}`, {
+        image: downloadURL
+      })
+    }
+
+    yield put(updateRecipeSuccess())
+    yield put(reset('createRecipe'))
+    yield put(push(`/recipes/${recipeId}`))
+  } catch (error) {
+    yield put(updateRecipeFailure(error))
   }
 }
 
@@ -37,4 +63,5 @@ export default function * recipesSaga () {
   )
 
   yield takeEvery(types.CREATE_RECIPE.REQUEST, createRecipeSaga)
+  yield takeEvery(types.UPDATE_RECIPE.REQUEST, updateRecipeSaga)
 }
