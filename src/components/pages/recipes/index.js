@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import Create from './Create'
 import CreateIngredients from './CreateIngredients'
 import Details from './Details'
+import Edit from './Edit'
 
 class Recipes extends PureComponent {
   render () {
@@ -13,6 +14,7 @@ class Recipes extends PureComponent {
       <Route exact path={`${match.url}/create`} component={Create} />
       <Route exact path={`${match.url}/create/ingredients`} component={CreateIngredients} />
       <Route exact path={`${match.url}/:id`} component={Details} />
+      <Route exact path={`${match.url}/:id/edit`} component={Edit} />
     </Switch>
   }
 }

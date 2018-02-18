@@ -18,6 +18,11 @@ export const recipesSelector = createSelector(
   }))
 )
 
+export const rawRecipeSelector = createSelector(
+  rawRecipesSelector,
+  recipeIdSelector,
+  (recipes, id) => recipes[id]
+)
 export const recipeSelector = createSelector(
   recipesSelector,
   recipeIdSelector,
