@@ -14,6 +14,7 @@ import {
   IngredientsList,
   Input,
   Label,
+  Link,
   SubLabel
 } from '@atoms'
 import { recipeSelector } from '@selectors/recipes'
@@ -44,13 +45,16 @@ class RecipeDetails extends PureComponent {
 
   render () {
     const {
-      calories,
-      healthScore,
-      image,
-      ingredients,
-      name,
-      preparationTime
-    } = this.props.recipe
+      match,
+      recipe: {
+        calories,
+        healthScore,
+        image,
+        ingredients,
+        name,
+        preparationTime
+      }
+    } = this.props
     const { servings } = this.state
 
     const banner = <Banner image={image}>
@@ -63,7 +67,7 @@ class RecipeDetails extends PureComponent {
 
       <ButtonList row>
         <Button icon={basket}>Add to grocery list</Button>
-        <Button icon={penpaper} colour='grey'>Edit</Button>
+        <Link to={`${match.url}/edit`} icon={penpaper} colour='grey'>Edit</Link>
       </ButtonList>
 
       <SubLabel>Ingredients</SubLabel>
