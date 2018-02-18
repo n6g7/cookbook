@@ -75,6 +75,9 @@
             ".validate": "root.child('ingredients/' + $iid).exists() && newData.isNumber()"
           }
         },
+        "instructions": {
+          ".validate": "newData.isString()"
+        },
         "name": {
           ".validate": "newData.isString() && newData.val().length > 0"
         },

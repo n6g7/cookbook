@@ -14,7 +14,8 @@ import {
   Input,
   Label,
   Link,
-  Radio
+  Radio,
+  Textarea
 } from '@atoms'
 import { ImageSelector } from '@molecules'
 import { formIngredientsSelector } from '@selectors'
@@ -124,6 +125,12 @@ class EditRecipe extends PureComponent {
         colour='blue'
         placeholder='0'
         suffix='minutes'
+      />
+
+      <Label>Instructions</Label>
+      <Field
+        name='instructions'
+        component={Textarea}
       />
 
       <Label>All good?</Label>
