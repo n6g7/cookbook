@@ -37,10 +37,14 @@ class ImageSelector extends PureComponent {
         onChange,
         value
       },
+      meta: {
+        initial
+      },
       ...props
     } = this.props
 
-    const src = typeof value === 'string' ? value : window.URL.createObjectURL(value)
+    const val = value || initial
+    const src = typeof val === 'string' ? val : window.URL.createObjectURL(val)
 
     return <div>
       { value &&
