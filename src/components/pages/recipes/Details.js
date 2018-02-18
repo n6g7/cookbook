@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 
 import basket from '@assets/basket.svg'
 import penpaper from '@assets/penpaper.svg'
@@ -51,6 +52,7 @@ class RecipeDetails extends PureComponent {
         healthScore,
         image,
         ingredients,
+        instructions,
         name,
         preparationTime
       }
@@ -90,6 +92,9 @@ class RecipeDetails extends PureComponent {
           />
         )}
       </IngredientsList>
+
+      <SubLabel>Instructions</SubLabel>
+      <Markdown source={instructions} />
     </BannerPage>
   }
 }
