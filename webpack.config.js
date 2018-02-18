@@ -16,6 +16,7 @@ module.exports = {
       '@actions': path.resolve(__dirname, 'src/redux/actions'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@atoms': path.resolve(__dirname, 'src/components/atoms'),
+      '@forms': path.resolve(__dirname, 'src/components/forms'),
       '@history': path.resolve(__dirname, 'src/history'),
       '@molecules': path.resolve(__dirname, 'src/components/molecules'),
       '@organisms': path.resolve(__dirname, 'src/components/organisms'),

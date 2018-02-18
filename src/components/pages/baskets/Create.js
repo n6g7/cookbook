@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
 import { createBasket } from '@actions/baskets'
-import { AddBasketForm } from '@organisms'
+import { EditBasket } from '@forms'
 import { BlankPage } from '@templates'
 
 class AddBasket extends PureComponent {
@@ -10,7 +10,7 @@ class AddBasket extends PureComponent {
     const { createBasket } = this.props
 
     return <BlankPage title='Let’s create a new basket together!'>
-      <AddBasketForm onSubmit={createBasket} />
+      <EditBasket onSubmit={createBasket} />
     </BlankPage>
   }
 }

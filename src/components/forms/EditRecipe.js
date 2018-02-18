@@ -29,7 +29,7 @@ const ButtonRow = styled.div`
   }
 `
 
-class AddRecipeForm extends PureComponent {
+class EditRecipe extends PureComponent {
   static propTypes = {
     ingredients: PropTypes.array.isRequired
   }
@@ -141,5 +141,5 @@ export default connect(mapStateToProps)(
     form: 'createRecipe',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true
-  })(AddRecipeForm)
+  })(EditRecipe)
 )

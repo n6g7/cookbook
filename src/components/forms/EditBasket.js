@@ -13,7 +13,7 @@ import {
 import { recipesSelector } from '@selectors'
 import capitalize from '@services/capitalize'
 
-class AddBasketForm extends PureComponent {
+class EditBasket extends PureComponent {
   static propTypes = {
     recipes: PropTypes.array.isRequired
   }
@@ -57,5 +57,5 @@ export default connect(mapStateToProps)(
     form: 'createBasket',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true
-  })(AddBasketForm)
+  })(EditBasket)
 )

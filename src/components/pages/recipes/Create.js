@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
 import { createRecipe } from '@actions/recipes'
-import { AddRecipeForm } from '@organisms'
+import { EditRecipe } from '@forms'
 import { BlankPage } from '@templates'
 
 class AddRecipe extends PureComponent {
@@ -10,7 +10,7 @@ class AddRecipe extends PureComponent {
     const { createRecipe } = this.props
 
     return <BlankPage title='Let’s create a new recipe together!'>
-      <AddRecipeForm onSubmit={createRecipe} />
+      <EditRecipe onSubmit={createRecipe} />
     </BlankPage>
   }
 }

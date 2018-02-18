@@ -8,7 +8,7 @@ import { FieldList, Input, Link } from '@atoms'
 import { ingredientsSelector } from '@selectors'
 import capitalize from '@services/capitalize'
 
-class AddRecipeIngredientsForm extends PureComponent {
+class EditRecipeIngredients extends PureComponent {
   static propTypes = {
     ingredients: PropTypes.array.isRequired
   }
@@ -49,5 +49,5 @@ export default connect(mapStateToProps)(
     form: 'createRecipe',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true
-  })(AddRecipeIngredientsForm)
+  })(EditRecipeIngredients)
 )
