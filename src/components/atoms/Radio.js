@@ -28,7 +28,7 @@ class Radio extends PureComponent {
       ...props
     } = this.props
 
-    const active = value === radioValue
+    const active = value === radioValue || value === parseInt(radioValue)
 
     return <Button
       onClick={this.onClick}
