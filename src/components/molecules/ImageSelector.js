@@ -40,9 +40,11 @@ class ImageSelector extends PureComponent {
       ...props
     } = this.props
 
+    const src = typeof value === 'string' ? value : window.URL.createObjectURL(value)
+
     return <div>
       { value &&
-        <Image src={window.URL.createObjectURL(value)} />
+        <Image src={src} />
       }
       <FileButton
         icon={value ? penpaper : plus}
