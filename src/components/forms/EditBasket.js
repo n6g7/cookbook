@@ -36,7 +36,7 @@ class EditBasket extends PureComponent {
               name={`recipes.${recipe.id}`}
               component={Input}
               type='number'
-              />
+            />
             {capitalize(recipe.name)}
           </li>
         )}
