@@ -15,19 +15,24 @@ class EditRecipe extends PureComponent {
   }
 
   render () {
-    const { recipe, updateRecipe } = this.props
+    const { match, recipe, updateRecipe } = this.props
+
+    const initialValues = {
+      ...recipe,
+      id: match.params.id
+    }
 
     return <BlankPage title={`Editing "${recipe.name}"`}>
       <EditRecipeForm
         onSubmit={updateRecipe}
-        initialValues={recipe}
+        initialValues={initialValues}
       />
     </BlankPage>
   }
 }
 
-const mapStateToProps = state => ({
-  recipe: rawRecipeSelector(state)
+const mapStateToProps = (state, ownProps) => ({
+  recipe: rawRecipeSelector(state, ownProps)
 })
 const mapDispatchToProps = {
   updateRecipe

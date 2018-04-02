@@ -99,8 +99,8 @@ class RecipeDetails extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
-  recipe: recipeSelector(state)
+const mapStateToProps = (state, ownProps) => ({
+  recipe: recipeSelector(state, ownProps)
 })
 const mapDispatchToProps = {}
 

@@ -35,7 +35,7 @@ export const createIngredientFailure = error => ({
   error
 })
 
-export const updateIngredient = ({ id, ...ingredient }) => ({
+export const updateIngredient = ingredient => ({
   type: types.UPDATE_INGREDIENT.REQUEST,
   ingredient
 })

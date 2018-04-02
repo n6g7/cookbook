@@ -1,4 +1,4 @@
-import { call, fork, put, select, takeEvery } from 'redux-saga/effects'
+import { call, fork, put, takeEvery } from 'redux-saga/effects'
 import { push } from 'react-router-redux'
 
 import rsf from '../rsf'
@@ -11,7 +11,6 @@ import {
   updateCategorySuccess,
   updateCategoryFailure
 } from '@actions/categories'
-import { categoryIdSelector } from '@selectors/router'
 
 function * createCategorySaga ({ category }) {
   try {
@@ -24,10 +23,9 @@ function * createCategorySaga ({ category }) {
 }
 
 function * updateCategorySaga ({ category }) {
-  const id = yield select(categoryIdSelector)
-
   try {
-    yield call(rsf.database.update, `categories/${id}`, category)
+    const { id, ...rest } = category
+    yield call(rsf.database.update, `categories/${id}`, rest)
     yield put(updateCategorySuccess())
     yield put(push('/categories'))
   } catch (error) {

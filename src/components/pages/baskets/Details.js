@@ -57,8 +57,8 @@ class BasketDetails extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
-  basket: basketSelector(state)
+const mapStateToProps = (state, ownProps) => ({
+  basket: basketSelector(state, ownProps)
 })
 const mapDispatchToProps = {}
 

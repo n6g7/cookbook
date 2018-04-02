@@ -31,7 +31,7 @@ export const createUnitFailure = error => ({
   error
 })
 
-export const updateUnit = ({ id, ...unit }) => ({
+export const updateUnit = unit => ({
   type: types.UPDATE_UNIT.REQUEST,
   unit
 })

@@ -1,5 +1,5 @@
 import { reset } from 'redux-form'
-import { call, fork, put, select, takeEvery } from 'redux-saga/effects'
+import { call, fork, put, takeEvery } from 'redux-saga/effects'
 import { push } from 'react-router-redux'
 
 import rsf from '../rsf'
@@ -12,7 +12,6 @@ import {
   updateRecipeSuccess,
   updateRecipeFailure
 } from '@actions/recipes'
-import { recipeIdSelector } from '@selectors/router'
 
 function * createRecipeSaga ({ image, recipe }) {
   try {
@@ -31,10 +30,9 @@ function * createRecipeSaga ({ image, recipe }) {
 }
 
 function * updateRecipeSaga ({ image, recipe }) {
-  const recipeId = yield select(recipeIdSelector)
-
   try {
-    yield call(rsf.database.patch, `recipes/${recipeId}`, recipe)
+    const { id: recipeId, ...rest } = recipe
+    yield call(rsf.database.patch, `recipes/${recipeId}`, rest)
 
     // Maybe update the image?
     if (typeof image !== 'string') {

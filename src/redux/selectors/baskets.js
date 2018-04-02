@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect'
 import { objectToArray } from './base'
 import { recipesSelector } from './recipes'
-import { basketIdSelector } from './router'
 
 export const rawBasketsSelector = state => state.baskets.list
+export const basketIdSelector = (state, props) => props.match.params.id
 
 export const basketsSelector = createSelector(
   rawBasketsSelector,

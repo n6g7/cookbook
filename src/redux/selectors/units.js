@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect'
 import { objectToArray } from './base'
-import { unitIdSelector } from './router'
 
 export const rawUnitsSelector = state => state.units.list
+export const unitIdSelector = (state, props) => props.match.params.id
 
 export const unitsSelector = createSelector(
   rawUnitsSelector,

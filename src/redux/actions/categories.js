@@ -31,7 +31,7 @@ export const createCategoryFailure = error => ({
   error
 })
 
-export const updateCategory = ({ id, ...category }) => ({
+export const updateCategory = category => ({
   type: types.UPDATE_CATEGORY.REQUEST,
   category
 })

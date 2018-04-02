@@ -1,4 +1,4 @@
-import { call, fork, put, select, takeEvery } from 'redux-saga/effects'
+import { call, fork, put, takeEvery } from 'redux-saga/effects'
 import { push } from 'react-router-redux'
 
 import rsf from '../rsf'
@@ -11,7 +11,6 @@ import {
   updateIngredientSuccess,
   updateIngredientFailure
 } from '@actions/ingredients'
-import { ingredientIdSelector } from '@selectors/router'
 
 function * createIngredientSaga ({ ingredient }) {
   try {
@@ -24,10 +23,9 @@ function * createIngredientSaga ({ ingredient }) {
 }
 
 function * updateIngredientSaga ({ ingredient }) {
-  const id = yield select(ingredientIdSelector)
-
   try {
-    yield call(rsf.database.update, `ingredients/${id}`, ingredient)
+    const { id, ...rest } = ingredient
+    yield call(rsf.database.update, `ingredients/${id}`, rest)
     yield put(updateIngredientSuccess())
     yield put(push('/ingredients'))
   } catch (error) {

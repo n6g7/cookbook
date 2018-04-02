@@ -8,22 +8,27 @@ import { categorySelector } from '@selectors/categories'
 
 class EditCategory extends PureComponent {
   render () {
-    const { category, updateCategory } = this.props
+    const { category, match, updateCategory } = this.props
+
+    const initialValues = {
+      ...category,
+      id: match.params.id
+    }
 
     return <div>
       <Header as='h1' attached='top'>Edit category</Header>
       <Segment attached>
         <CategoryForm
           onSubmit={updateCategory}
-          initialValues={category}
+          initialValues={initialValues}
         />
       </Segment>
     </div>
   }
 }
 
-const mapStateToProps = state => ({
-  category: categorySelector(state)
+const mapStateToProps = (state, ownProps) => ({
+  category: categorySelector(state, ownProps)
 })
 
 const mapDispatchToProps = {

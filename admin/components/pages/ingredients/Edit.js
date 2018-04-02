@@ -8,15 +8,18 @@ import { ingredientSelector } from '@selectors/ingredients'
 
 class EditIngredient extends PureComponent {
   render () {
-    const { ingredient, updateIngredient } = this.props
+    const { ingredient, match, updateIngredient } = this.props
 
     const initial = ingredient
       ? {
         ...ingredient,
+        id: match.params.id,
         category: ingredient.category.id,
         unit: ingredient.unit.id
       }
-      : {}
+      : {
+        id: match.params.id
+      }
 
     return <div>
       <Header as='h1' attached='top'>Edit ingredient</Header>
@@ -30,8 +33,8 @@ class EditIngredient extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
-  ingredient: ingredientSelector(state)
+const mapStateToProps = (state, ownProps) => ({
+  ingredient: ingredientSelector(state, ownProps)
 })
 
 const mapDispatchToProps = {

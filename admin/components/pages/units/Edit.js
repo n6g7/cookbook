@@ -8,22 +8,27 @@ import { unitSelector } from '@selectors/units'
 
 class EditUnit extends PureComponent {
   render () {
-    const { unit, updateUnit } = this.props
+    const { match, unit, updateUnit } = this.props
+
+    const initialValues = {
+      ...unit,
+      id: match.params.id
+    }
 
     return <div>
       <Header as='h1' attached='top'>Edit unit</Header>
       <Segment attached>
         <UnitForm
           onSubmit={updateUnit}
-          initialValues={unit}
+          initialValues={initialValues}
         />
       </Segment>
     </div>
   }
 }
 
-const mapStateToProps = state => ({
-  unit: unitSelector(state)
+const mapStateToProps = (state, ownProps) => ({
+  unit: unitSelector(state, ownProps)
 })
 
 const mapDispatchToProps = {
