@@ -33,12 +33,7 @@ class App extends PureComponent {
     const { loggedIn } = this.props
 
     return <Container>
-      { !loggedIn &&
-        <Switch>
-          <Route exact path='/' component={Login} />
-          <Redirect to='/' />
-        </Switch>
-      }
+      { !loggedIn && <Login /> }
       { loggedIn &&
         <Switch>
           <Route exact path='/' component={Home} />
