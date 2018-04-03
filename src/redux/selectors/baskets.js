@@ -1,40 +1,40 @@
 import { createSelector } from 'reselect'
+
+import sumIngredients from '@services/basket'
+
 import { objectToArray } from './base'
-import { recipesSelector } from './recipes'
+import { rawIngredientsSelector } from './ingredients'
+import { rawRecipesSelector } from './recipes'
 
 export const rawBasketsSelector = state => state.baskets.list
 export const basketIdSelector = (state, props) => props.match.params.id
 
 export const basketsSelector = createSelector(
   rawBasketsSelector,
-  recipesSelector,
-  (rawBaskets, recipesList) => objectToArray(rawBaskets).map(basket => {
-    const recipes = Object.keys(basket.recipes).map(id => ({
-      ...recipesList.find(r => r.id === id),
-      value: basket.recipes[id]
+  rawRecipesSelector,
+  (baskets, recipes) => objectToArray(baskets).map(basket => ({
+    ...basket,
+    recipes: Object.keys(basket.recipes).map(rid => ({
+      ...recipes[rid],
+      count: basket.recipes[rid]
     }))
-
-    const ingredients = []
-
-    recipes.forEach(recipe => {
-      recipe.ingredients.forEach((ingredient, iid) => {
-        const ing = ingredients.find(i => i.id === iid)
-
-        if (ing) ing.value += ingredient.value
-        else ingredients.push(ingredient)
-      })
-    })
-
-    return {
-      ...basket,
-      ingredients,
-      recipes
-    }
-  })
+  }))
 )
 
 export const basketSelector = createSelector(
   basketsSelector,
   basketIdSelector,
-  (baskets, id) => baskets.find(basket => basket.id === id)
+  rawIngredientsSelector,
+  (baskets, id, ingredients) => {
+    const basket = sumIngredients(baskets.find(basket => basket.id === id))
+
+    return {
+      ...basket,
+      ingredients: Object.keys(basket.ingredients).map(iid => ({
+        ...ingredients[iid],
+        id: iid,
+        value: basket.ingredients[iid]
+      }))
+    }
+  }
 )

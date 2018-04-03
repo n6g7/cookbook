@@ -1,47 +1,20 @@
-const isMeat = (ingredient, ingredients) =>
-  ingredients.find(i => i.name === ingredient).meat
+import _mapValues from 'lodash/mapValues'
+import _mergeWith from 'lodash/mergeWith'
 
-const isCheese = (ingredient, ingredients) =>
-  ingredients.find(i => i.name === ingredient).cheese
+const mergeIngredients = (...lists) => _mergeWith(
+  {},
+  ...lists,
+  (a, b) => (a || 0) + (b || 0)
+)
 
-const getQuantities = (recipes, ingredients) =>
-  recipes
-    .filter(r => r.servings > 0)
-    .reduce((acc, r) => {
-      return r.ingredients.reduce((acc, i) => {
-        if (!acc[i.name]) acc[i.name] = 0
+export default basket => {
+  const ingredientLists = basket.recipes.map(recipe => _mapValues(
+    recipe.ingredients,
+    n => recipe.count * n
+  ))
 
-        acc[i.name] += i.quantity * (r.servings || 0) / (r.serves || 1)
-
-        if (r.veggieServings > 0 && isMeat(i.name, ingredients)) {
-          acc[i.name] -= i.quantity * (r.veggieServings || 0) / (r.serves || 1)
-        }
-        if (r.cheesefreeServings > 0 && isCheese(i.name, ingredients)) {
-          acc[i.name] -= i.quantity * (r.cheesefreeServings || 0) / (r.serves || 1)
-        }
-
-        return acc
-      }, acc)
-    }, {})
-
-const attachQuantities = (ingredients, quantities) =>
-  ingredients
-    .filter(i => quantities[i.name])
-    .map(i => ({
-      ...i,
-      quantity: Math.round(quantities[i.name] * 10) / 10
-    }))
-
-const categorize = basket =>
-  basket.reduce((acc, i) => {
-    if (!(i.category in acc)) acc[i.category] = []
-    acc[i.category].push(i)
-    return acc
-  }, {})
-
-export const buildBasket = (recipes, ingredients) => {
-  const quantities = getQuantities(recipes, ingredients)
-  const basket = attachQuantities(ingredients, quantities)
-
-  return categorize(basket)
+  return {
+    ...basket,
+    ingredients: mergeIngredients(...ingredientLists)
+  }
 }
