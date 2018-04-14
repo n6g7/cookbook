@@ -54,7 +54,8 @@ class RecipeDetails extends PureComponent {
         ingredients,
         instructions,
         name,
-        preparationTime
+        preparationTime,
+        serves
       }
     } = this.props
     const { servings } = this.state
@@ -87,7 +88,7 @@ class RecipeDetails extends PureComponent {
           <Ingredient
             key={ingredient.id}
             name={ingredient.name}
-            quantity={servings * ingredient.value}
+            quantity={servings * ingredient.value / serves}
             unit={ingredient.unit.symbol}
           />
         )}
