@@ -22,8 +22,20 @@ jobs:
           command: yarn
 
       - run:
+          name: Install global dependencies
+          command: yarn global add greenkeeper-lockfile
+
+      - run:
+          name: Update lockfile with greenkeeper
+          command: greenkeeper-lockfile-update
+
+      - run:
           name: Run tests
           command: yarn test
+
+      - run:
+          name: Upload lockfile with greenkeeper
+          command: greenkeeper-lockfile-upload
 
       - save_cache:
           key: cook-{{ .Branch }}-{{ checksum "yarn.lock" }}
