@@ -44,7 +44,7 @@
     "redux-saga": "^0.16.0",
     "redux-saga-firebase": "^0.12.0",
     "reselect": "^3.0.1",
-    "rsf-auth": "^0.0.4",
+    "rsf-auth": "^0.0.5",
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.79.0",
     "styled-components": "^3.2.5"
