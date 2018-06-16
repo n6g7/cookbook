@@ -8,6 +8,7 @@
     "deploy": "firebase deploy",
     "dev": "webpack-dev-server --mode=development",
     "pretest": "standard",
+    "storybook": "start-storybook -p 9000",
     "test": "jest --passWithNoTests"
   },
   "repository": {
@@ -58,6 +59,8 @@
     "@babel/preset-react": "^7.0.0-beta.51",
     "@babel/preset-stage-3": "^7.0.0-beta.51",
     "@babel/runtime": "^7.0.0-beta.51",
+    "@storybook/addon-knobs": "^3.4.7",
+    "@storybook/react": "^3.4.7",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "8.2.3",
     "babel-loader": "^8.0.0-beta.3",
