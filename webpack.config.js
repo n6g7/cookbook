@@ -38,14 +38,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.svg$/,
-        exclude: /node_modules/,
-        use: [
-          'raw-loader',
-          'img-loader'
-        ]
-      },
-      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -60,7 +52,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.png$/,
+        test: /\.(png|svg)$/,
         exclude: /node_modules/,
         use: [
           'url-loader',

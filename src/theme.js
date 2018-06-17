@@ -1,20 +1,27 @@
+import { css } from 'styled-components'
+
+const shadow = 'rgba(51,51,51,0.16)'
+const unit = 4
+const mult = n => n * unit
+
 export default {
-  background: '#f1f1f3',
-  border: '#d8d8da',
   colours: {
-    blue: '#15a7bc',
-    green: '#7ed321',
-    grey: '#909092',
-    orange: '#d58119',
-    purple: '#865ecd',
-    red: '#d51946',
-    yellow: '#d5bb19'
+    black: '#1e2125',
+    green: '#badc58',
+    red: '#ff7979',
+    shadow,
+    teal: '#95afc0',
+    yellow: '#f9ca24',
+    white: '#ffffff'
   },
-  defaultColour: 'purple',
-  shadow: 'rgba(51,51,53,0.24)',
-  spacing: 8,
-  text: {
-    faded: '#909092',
-    main: '#333335'
+  shadow: css`
+    box-shadow: 0 ${mult(0.5)}px ${mult(2)}px ${shadow};
+  `,
+  shadowActive: css`
+    box-shadow: 0 0 ${mult(2)}px ${shadow};
+  `,
+  spacing: {
+    unit,
+    mult
   }
 }
