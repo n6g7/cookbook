@@ -1,33 +1,42 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import basket from '@assets/basket.svg'
-import { HealthScoreLabel, Link } from '@atoms'
-import Card from './Card'
+import { ImageCard } from '@atoms'
+
+const Container = styled(ImageCard)`
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  height: ${p => p.theme.spacing.mult(55)}px;
+  padding: ${p => `${p.theme.spacing.mult(8)}px ${p.theme.spacing.mult(6)}px`};
+`
+
+const Title = styled.span`
+  font-size: ${p => p.theme.spacing.mult(6)}px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: ${p => p.theme.spacing.unit}px;
+  text-align: center;
+`
 
 class RecipeCard extends PureComponent {
   static propTypes = {
-    recipe: PropTypes.object.isRequired
+    adjective: PropTypes.string.isRequired,
+    calories: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    minutes: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired
   }
 
   render () {
-    const {
-      calories,
-      healthScore,
-      id,
-      image,
-      name,
-      preparationTime
-    } = this.props.recipe
+    const { adjective, calories, image, minutes, name, ...rest } = this.props
 
-    return <Card
-      image={image}
-      label={<HealthScoreLabel healthScore={healthScore} />}
-      title={name}
-      subtitle={`${calories} kcal  ${preparationTime} min`}
-    >
-      <Link to={`/recipes/${id}`} icon={basket} />
-    </Card>
+    return <Container image={image} {...rest}>
+      <Title>{name}</Title>
+      <span>{calories} kcal • {minutes} mins • {adjective}</span>
+    </Container>
   }
 }
 
