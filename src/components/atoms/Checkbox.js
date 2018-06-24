@@ -7,7 +7,7 @@ export default styled.input.attrs({
 })`
   appearance: none;
   background-image: url(${tick});
-  background-position: 50% 50%;
+  background-position: -100% 50%;
   background-repeat: no-repeat;
   border: ${p => p.theme.spacing.mult(0.5)}px solid ${p => p.theme.colours.teal};
   border-radius: ${p => p.theme.spacing.unit}px;
@@ -15,10 +15,11 @@ export default styled.input.attrs({
   height: ${p => p.theme.spacing.mult(6)}px;
   margin: 0;
   outline: none;
-  transition: background-color .3s;
+  transition: .3s;
   width: ${p => p.theme.spacing.mult(6)}px;
 
   &:checked {
     background-color: ${p => p.theme.colours.teal};
+    background-position-x: 50%;
   }
 `
