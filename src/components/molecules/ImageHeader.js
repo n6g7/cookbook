@@ -11,7 +11,7 @@ const Container = styled(ImageCard)`
   flex-flow: column nowrap;
   justify-content: flex-end;
   min-height: ${p => p.theme.spacing.mult(98)}px;
-  margin-bottom: ${p => p.theme.spacing.mult(7)}px;
+  margin-bottom: ${p => p.theme.spacing.mult(15)}px;
   padding: ${p => p.theme.spacing.mult(10)}px ${p => p.theme.spacing.mult(6)}px ${p => p.theme.spacing.mult(15)}px;
   position: relative;
 `
