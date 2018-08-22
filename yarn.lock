@@ -650,12 +650,18 @@
     "@babel/plugin-syntax-dynamic-import" "7.0.0-beta.51"
     "@babel/plugin-syntax-import-meta" "7.0.0-beta.51"
 
-"@babel/runtime@^7.0.0-beta.49", "@babel/runtime@^7.0.0-beta.51":
+"@babel/runtime@^7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.51.tgz#48b8ed18307034c6620f643514650ca2ccc0165a"
   dependencies:
     core-js "^2.5.7"
     regenerator-runtime "^0.11.1"
+
+"@babel/runtime@^7.0.0-rc.1":
+  version "7.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-rc.2.tgz#63082909bd27c39f92c27c641f278389ad30a478"
+  dependencies:
+    regenerator-runtime "^0.12.0"
 
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -7829,6 +7835,10 @@ regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
+regenerator-runtime@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+
 regenerator-transform@^0.12.4:
   version "0.12.4"
   resolved "https://registry.yarnpkg.com/regenerator-transform/-/regenerator-transform-0.12.4.tgz#aa9b6c59f4b97be080e972506c560b3bccbfcff0"
@@ -8304,16 +8314,16 @@ semantic-ui-react@^0.78.2:
     lodash "^4.17.4"
     prop-types "^15.5.10"
 
-semantic-ui-react@^0.81.1:
-  version "0.81.1"
-  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.81.1.tgz#9bf8e1949aac8584173f0acb11c6ce05008bcbfc"
+semantic-ui-react@^0.82.3:
+  version "0.82.3"
+  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.82.3.tgz#b7940c2344a1b9b12659b284e00baf907186b724"
   dependencies:
-    "@babel/runtime" "^7.0.0-beta.49"
+    "@babel/runtime" "^7.0.0-rc.1"
     classnames "^2.2.5"
-    fbjs "^0.8.16"
     keyboard-key "^1.0.1"
     lodash "^4.17.10"
     prop-types "^15.6.1"
+    shallowequal "^1.0.2"
 
 semver-diff@^2.0.0:
   version "2.1.0"
@@ -8424,6 +8434,10 @@ sha.js@^2.4.0, sha.js@^2.4.8:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
+
+shallowequal@^1.0.2:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
 
 shebang-command@^1.2.0:
   version "1.2.0"
