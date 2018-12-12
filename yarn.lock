@@ -4471,9 +4471,12 @@ hoist-non-react-statics@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
 
-hoist-non-react-statics@^2.5.4:
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.4.tgz#fc3b1ac05d2ae3abedec84eba846511b0d4fcc4f"
+hoist-non-react-statics@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.2.1.tgz#c09c0555c84b38a7ede6912b61efddafd6e75e1e"
+  integrity sha512-TFsu3TV3YLY+zFTZDrN8L2DTFanObwmBLpWvJs1qfUuEQ5bTAdFcwfx2T/bsCXfM9QHSLvjfP+nihEl0yvozxw==
+  dependencies:
+    react-is "^16.3.2"
 
 home-dir@^1.0.0:
   version "1.0.0"
@@ -5830,9 +5833,10 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash-es@^4.17.10:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
+lodash-es@^4.17.11:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.11.tgz#145ab4a7ac5c5e52a3531fb4f310255a152b4be0"
+  integrity sha512-DHb1ub+rMjjrxqlB3H56/6MXtm1lSksDp2rA2cNWjG8mlDUYFhUj3Di2Zn5IwSU87xLv8tNIQ7sSwE/YOX/D/Q==
 
 lodash-es@^4.17.3:
   version "4.17.4"
@@ -5963,6 +5967,11 @@ lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.3, lodash@^4.17.4, 
 lodash@^4.17.10:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+
+lodash@^4.17.11:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
 log-driver@1.2.7:
   version "1.2.7"
@@ -7551,6 +7560,11 @@ react-is@^16.3.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
 
+react-is@^16.3.2, react-is@^16.6.3:
+  version "16.6.3"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
+  integrity sha512-u7FDWtthB4rWibG/+mFbVd5FvdI20yde86qKGx4lVUTWmPlSWQ4QxbBIrrs+HnXGbxOUlUzTAP/VDmvCwaP2yA==
+
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -7781,17 +7795,19 @@ redux-form@^7.0.3:
     lodash-es "^4.17.3"
     prop-types "^15.5.9"
 
-redux-form@^7.4.2:
-  version "7.4.2"
-  resolved "https://registry.yarnpkg.com/redux-form/-/redux-form-7.4.2.tgz#d6061088fb682eb9fc5fb9749bd8b102f03154b0"
+redux-form@^8.0.4:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/redux-form/-/redux-form-8.0.4.tgz#42f2dac0f8712a990a609979e7eb374292ad7fe1"
+  integrity sha512-Qdkv+c3DKSMPRi5PdmJEiIMb3RaENLCa9s5D5ZPHu013318Y8giwVmVh2ELPtdyASHeF3fAcTlzvcDua+rjjGw==
   dependencies:
     es6-error "^4.1.1"
-    hoist-non-react-statics "^2.5.4"
+    hoist-non-react-statics "^3.2.1"
     invariant "^2.2.4"
     is-promise "^2.1.0"
-    lodash "^4.17.10"
-    lodash-es "^4.17.10"
+    lodash "^4.17.11"
+    lodash-es "^4.17.11"
     prop-types "^15.6.1"
+    react-is "^16.6.3"
     react-lifecycles-compat "^3.0.4"
 
 redux-saga-firebase@^0.14.0:
