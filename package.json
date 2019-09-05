@@ -29,7 +29,7 @@
   "homepage": "https://github.com/n6g7/cookbook#readme",
   "dependencies": {
     "@firebase/app-types": "^0.3.2",
-    "firebase": "^5.0.4",
+    "firebase": "^6.6.0",
     "history": "^4.7.2",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
