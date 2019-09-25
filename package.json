@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/n6g7/cookbook#readme",
   "dependencies": {
-    "@firebase/app-types": "^0.3.2",
+    "@firebase/app-types": "^0.4.4",
     "firebase": "^5.0.4",
     "history": "^4.7.2",
     "lodash": "^4.17.10",
