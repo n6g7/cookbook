@@ -8,7 +8,9 @@
     "deploy": "firebase deploy",
     "dev": "webpack-dev-server --mode=development",
     "pretest": "standard",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -48,7 +50,8 @@
     "rsf-auth": "^0.0.5",
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.81.1",
-    "styled-components": "^3.3.2"
+    "styled-components": "^3.3.2",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
@@ -80,5 +83,6 @@
   },
   "standard": {
     "parser": "babel-eslint"
-  }
+  },
+  "snyk": true
 }
