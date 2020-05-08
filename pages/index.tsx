@@ -58,7 +58,11 @@ const Index: NextPage<Props> = ({ recipe, recipes }) => {
       <Hero />
       <RecipeList>
         {recipes.map((recipe) => (
-          <Link href={`/?recipeId=${recipe.id}`} as={`/recipes/${recipe.id}`}>
+          <Link
+            href={`/?recipeId=${recipe.id}`}
+            as={`/recipes/${recipe.id}`}
+            key={recipe.id}
+          >
             <Anchor>
               <RecipeCard recipe={recipe} />
             </Anchor>

@@ -9,6 +9,11 @@ const Container = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 const SubMenu = styled.ol`
   align-items: center;
@@ -30,7 +35,7 @@ const LeftMenu = styled(SubMenu)`
   justify-content: flex-start;
 `;
 const RightMenu = styled(SubMenu)`
-  justify-content: flex-end;s
+  justify-content: flex-end;
 `;
 
 const Menu: React.FC = () => {

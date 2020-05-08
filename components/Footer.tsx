@@ -6,6 +6,10 @@ const Container = styled.footer`
   height: 94px;
   margin-top: 160px;
   width: 100%;
+
+  a {
+    color: inherit;
+  }
 `;
 const Section = styled.section`
   align-items: center;
@@ -34,9 +38,9 @@ const Menu: React.FC = () => {
   return (
     <Container>
       <Left>
-        Made with love by{" "}
-        <a href="https://charlottebretonsch.com">charlottebretonsch</a> and{" "}
-        <a href="https://gnab.fr">gnab</a>
+        Made with love by&nbsp;
+        <a href="https://charlottebretonsch.com">Charlotte</a>&nbsp;and&nbsp;
+        <a href="https://gnab.fr">Nathan</a>
       </Left>
       <Right>Simone Cookbook 2020</Right>
     </Container>
