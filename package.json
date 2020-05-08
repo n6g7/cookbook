@@ -9,9 +9,9 @@
     "test": "prettier --check '**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@notion-cms/client": "^0.0.7",
-    "@notion-cms/react": "^0.0.7",
-    "@notion-cms/types": "^0.0.7",
+    "@notion-cms/client": "^0.0.8",
+    "@notion-cms/react": "^0.0.8",
+    "@notion-cms/types": "^0.0.8",
     "next": "^9.3.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

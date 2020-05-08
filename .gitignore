@@ -1,5 +1,7 @@
+.env
 .next
-node_modules
-yarn-error.log
-
 .now
+node_modules
+public/covers/*
+!public/covers/.gitkeep
+yarn-error.log

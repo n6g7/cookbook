@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import RecipeContent from "./Recipe";
-import { Recipe } from "../data";
+import { Recipe, getCoverPath } from "../data";
 
 const Container = styled.div`
   align-items: center;
@@ -27,7 +27,7 @@ const RecipeModal: React.FC<Props> = ({ recipe }) => {
   if (!recipe) return null;
   return (
     <Container>
-      <Cover src={recipe.meta.cover} />
+      <Cover src={getCoverPath(recipe)} />
       <RecipeContent recipe={recipe} />
     </Container>
   );

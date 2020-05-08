@@ -1009,28 +1009,28 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.3.6.tgz#a5eb91b4b8270fecb5fcf2d1319d8d04f0cf6f75"
   integrity sha512-XgxPc3WAkNpzD9xYtN4bd3wpV39WhnHYSwXGovVVcImXY6yn1as6hDgwkbuLADY/SHLIu2AI6CTVq0JDoTC/+g==
 
-"@notion-cms/client@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@notion-cms/client/-/client-0.0.7.tgz#d971d42c057a597fcc7d3f1936ebac085d919eeb"
-  integrity sha512-PQXy6QHk2vtRMr9+afnuFN5oVOYalf+8CzQEX+6i5O0Y0pBOxHkaF6qpcvDxj2FHiLpTTMo9B0enjNptPd7L2A==
+"@notion-cms/client@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@notion-cms/client/-/client-0.0.8.tgz#4e5cd1aaa73e544d57604664e72d5ee6f3b628a0"
+  integrity sha512-/qAdpraT3IDeO6yrWH3ugais+KOtgm2IEVsu8P0Pq/++0hIEiWMWzRDpYBOByKt6wV0aF4nXwYOfS57qg0WbEw==
   dependencies:
-    "@notion-cms/types" "^0.0.7"
+    "@notion-cms/types" "^0.0.8"
     debug "^4.1.1"
     isomorphic-unfetch "^3.0.0"
     lodash "^4.17.15"
 
-"@notion-cms/react@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@notion-cms/react/-/react-0.0.7.tgz#d2f984151c9ed4e2a29831eb467d9db231f983f6"
-  integrity sha512-HNm/2fkSrDHUxY8QvEmqjxN3cTR8yBCLb7ZGEY4l65woDI4RDHW0DbXFd06p3CqHoEG690cqX6Z06PhA2hiMuA==
+"@notion-cms/react@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@notion-cms/react/-/react-0.0.8.tgz#6886ddb420f1eee60a4631e7b4df4b51191c8abf"
+  integrity sha512-1NY5x+MfiOKXgX4z+CgyPn7yxFdzeuhNTDL3yHV/9GBJGvKFB0qRosOAu4wnmg1ZhdSQpVVENFcZdutKV4i9kw==
   dependencies:
-    "@notion-cms/types" "^0.0.7"
+    "@notion-cms/types" "^0.0.8"
     react "^16.13.1"
 
-"@notion-cms/types@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@notion-cms/types/-/types-0.0.7.tgz#0784cd0af030674e2785668d8370342cc9de49b9"
-  integrity sha512-+yQsNgkkVar9TKs/kQTMzIyNwew1xR3nV94e0xxqQBTf9CeooBVXhUsIpMuGVXYVnGpjcDqUPG2r4RuNcoGJhA==
+"@notion-cms/types@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@notion-cms/types/-/types-0.0.8.tgz#56c61da45a71fae0e8e88f2199bf94e1f1c6a472"
+  integrity sha512-71tyKoR76UHT3f/JfIdTY/seHweP1Ta7MW3ccxec9uXTaTlBPcaD/fQqofMRPZUW6wxmWHw2XI+krWWVLollRQ==
 
 "@types/node@^13.13.5":
   version "13.13.5"

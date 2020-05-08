@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import HealthLevel from "./HealthLevel";
 import RecipeStats from "./RecipeStats";
-import { Recipe } from "../data";
+import { Recipe, getCoverPath } from "../data";
 
 interface Props {
   recipe: Recipe;
@@ -72,7 +72,7 @@ const Stat: React.FC<StatProps> = ({ type, duration }) => (
 const RecipeCard: React.FC<Props> = ({ recipe }) => {
   return (
     <Container>
-      <Vignette src={recipe.meta.cover} />
+      <Vignette src={getCoverPath(recipe)} />
       <Content>
         <HealthLevel level={recipe.props["Health score"]} />
         <Name>{recipe.props.Name}</Name>
