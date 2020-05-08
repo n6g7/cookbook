@@ -35,7 +35,7 @@ interface RecipeIngredientProps {
 export interface RecipeIngredient
   extends LiteCollectionItem<RecipeIngredientProps> {}
 
-export const notion = new Notion("");
+export const notion = new Notion(process.env.NOTION_API_KEY);
 
 const recipesCollectionId = "4a601862-3c10-45d8-89bd-f2005da64e2c";
 const recipeIngredientsCollectionId = "abbd00ef-9f84-4d36-a3cd-75bff3f90c0d";
