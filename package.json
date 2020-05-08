@@ -1,84 +1,26 @@
 {
   "name": "cookbook",
-  "version": "0.0.2",
-  "description": "A cookbook",
-  "main": "src/index.js",
-  "scripts": {
-    "build": "webpack -p --mode=production",
-    "deploy": "firebase deploy",
-    "dev": "webpack-dev-server --mode=development",
-    "pretest": "standard",
-    "test": "jest --passWithNoTests"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/n6g7/cookbook.git"
-  },
-  "keywords": [
-    "cook",
-    "recipe",
-    "cooking",
-    "cookbook",
-    "ingredients"
-  ],
+  "version": "0.1.0",
+  "repository": "git@github.com:n6g7/cookbook.git",
   "author": "Nathan Gaberel <nathan@gnab.fr>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/n6g7/cookbook/issues"
+  "scripts": {
+    "dev": "next dev"
   },
-  "homepage": "https://github.com/n6g7/cookbook#readme",
   "dependencies": {
-    "@firebase/app-types": "^0.3.2",
-    "firebase": "^5.0.4",
-    "history": "^4.7.2",
-    "lodash": "^4.17.10",
-    "prop-types": "^15.6.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-markdown": "^3.3.3",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "react-router-redux": "^5.0.0-alpha.8",
-    "react-semantic-redux-form": "^1.2.6",
-    "redux": "^4.0.0",
-    "redux-form": "^7.4.2",
-    "redux-saga": "^1.0.0-beta.1",
-    "redux-saga-firebase": "^0.14.0",
-    "reselect": "^3.0.1",
-    "rsf-auth": "^0.0.5",
-    "semantic-ui-css": "^2.3.1",
-    "semantic-ui-react": "^0.81.1",
-    "styled-components": "^3.3.2"
+    "@notion-cms/client": "^0.0.7",
+    "@notion-cms/react": "^0.0.7",
+    "@notion-cms/types": "^0.0.7",
+    "next": "^9.3.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.51",
-    "@babel/plugin-transform-runtime": "^7.0.0-beta.51",
-    "@babel/polyfill": "^7.0.0-beta.51",
-    "@babel/preset-env": "^7.0.0-beta.51",
-    "@babel/preset-react": "^7.0.0-beta.51",
-    "@babel/preset-stage-3": "^7.0.0-beta.51",
-    "@babel/runtime": "^7.0.0-beta.51",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "8.2.3",
-    "babel-loader": "^8.0.0-beta.3",
-    "css-loader": "^0.28.11",
-    "file-loader": "^1.1.11",
-    "firebase-tools": "^3.18.6",
-    "img-loader": "^3.0.0",
-    "jest": "^23.1.0",
-    "json-loader": "^0.5.7",
-    "raw-loader": "^0.5.1",
-    "standard": "^11.0.1",
-    "style-loader": "^0.21.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4",
-    "yaml-loader": "^0.5.0"
-  },
-  "standard": {
-    "parser": "babel-eslint"
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.34",
+    "babel-plugin-styled-components": "^1.10.7",
+    "typescript": "^3.8.3"
   }
 }
