@@ -26,7 +26,7 @@ export const getStaticPaths = async () => {
   const recipes = await getRecipes();
   return {
     paths: recipes.map(({ id }) => ({ params: { id } })),
-    fallback: true,
+    fallback: false,
   };
 };
 
