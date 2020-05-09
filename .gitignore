@@ -1,3 +1,7 @@
-dist/bundle.*.js
+.env
+.next
+.now
 node_modules
-npm-debug.log
+public/covers/*
+!public/covers/.gitkeep
+yarn-error.log

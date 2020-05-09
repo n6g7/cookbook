@@ -1,11 +1,11 @@
-version: 2
+version: 2.1
 
 jobs:
   test:
     working_directory: ~/cook
 
     docker:
-      - image: node:8
+      - image: node:12
 
     steps:
       - checkout
@@ -19,23 +19,11 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: yarn
-
-      - run:
-          name: Install global dependencies
-          command: yarn global add greenkeeper-lockfile
-
-      - run:
-          name: Update lockfile with greenkeeper
-          command: greenkeeper-lockfile-update
+          command: yarn install --frozen-lockfile
 
       - run:
           name: Run tests
           command: yarn test
-
-      - run:
-          name: Upload lockfile with greenkeeper
-          command: greenkeeper-lockfile-upload
 
       - save_cache:
           key: cook-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -43,53 +31,8 @@ jobs:
             - ~/.yarn
             - ~/cook/node_modules
 
-  deploy:
-    working_directory: ~/cook
-
-    docker:
-      - image: node:8
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - deploy-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum "functions/yarn.lock" }}
-            - deploy-{{ .Branch }}
-            - deploy-master-{{ checksum "yarn.lock" }}-{{ checksum "functions/yarn.lock" }}
-            - deploy-master
-
-      - run:
-          name: Install dependencies
-          command: yarn
-
-      - run:
-          name: Install functions dependencies
-          command: cd functions && yarn
-
-      - run:
-          name: Build
-          command: yarn build
-
-      - deploy:
-          name: Deploy
-          command: yarn deploy --token "$FIREBASE_TOKEN"
-
-      - save_cache:
-          key: deploy-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum "functions/yarn.lock" }}
-          paths:
-            - ~/.yarn
-            - ~/cook/node_modules
-            - ~/cook/functions/node_modules
-
 workflows:
   version: 2
   stack:
     jobs:
       - test
-      - deploy:
-          requires:
-            - test
-          filters:
-            branches:
-              only: master
