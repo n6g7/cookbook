@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "test": "prettier --check '**/*.{ts,tsx}'"
+    "test": "prettier --check '**/*.{ts,tsx}'",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@notion-cms/client": "^0.0.8",
@@ -16,7 +18,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "snyk": "^1.319.2"
   },
   "devDependencies": {
     "@types/node": "^13.13.5",
@@ -24,5 +27,6 @@
     "babel-plugin-styled-components": "^1.10.7",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3"
-  }
+  },
+  "snyk": true
 }
