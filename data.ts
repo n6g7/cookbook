@@ -57,4 +57,4 @@ export const getUnits = (): Promise<Ingredient[]> =>
 export const getRecipeIngredients = (): Promise<RecipeIngredient[]> =>
   notion.loadCollection(recipeIngredientsCollectionId);
 
-export const getCoverPath = (recipe: Recipe) => `/covers/${recipe.id}`;
+export const getCoverPath = (recipe: Recipe) => `/covers/${recipe.id}.webp`;
