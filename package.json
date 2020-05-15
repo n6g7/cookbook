@@ -9,9 +9,9 @@
     "test": "prettier --check '**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@notion-cms/client": "^0.0.8",
-    "@notion-cms/react": "^0.0.8",
-    "@notion-cms/types": "^0.0.8",
+    "@notion-cms/client": "^0.0.11",
+    "@notion-cms/react": "^0.0.11",
+    "@notion-cms/types": "^0.0.11",
     "next": "^9.3.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -22,6 +22,7 @@
     "@types/node": "^13.13.5",
     "@types/react": "^16.9.34",
     "babel-plugin-styled-components": "^1.10.7",
+    "node-loader": "^0.6.0",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3"
   }

@@ -44,7 +44,7 @@ export const getStaticProps = async ({ params }) => {
     const coverPath = getCoverPath(recipe);
     const filePath = path.resolve(process.cwd(), `./public${coverPath}`);
     try {
-      await notion.downloadImage(recipe.meta.cover, filePath);
+      await notion.downloadImage(recipe.meta.cover, filePath, 800);
       console.log("Downloaded %o -> %o", recipe.meta.cover, filePath);
     } catch (error) {
       console.log(
