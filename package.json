@@ -12,7 +12,7 @@
     "@notion-cms/client": "^0.0.11",
     "@notion-cms/react": "^0.0.11",
     "@notion-cms/types": "^0.0.11",
-    "next": "^9.3.6",
+    "next": "^9.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
