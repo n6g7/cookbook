@@ -112,6 +112,7 @@ export const getStaticProps = async () => {
     props: {
       recipes: await getRecipes(),
     },
+    revalidate: 45 * 60,
   };
 };
 

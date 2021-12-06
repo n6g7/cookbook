@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getRecipe } from "../../../data";
 
-const cacheDuration = 60 * 60 * 24; // 1 day
-const swrDuration = 60 * 60 * 24; // 1 day
+const cacheDuration = 30 * 60;
+const swrDuration = 30 * 60;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "GET") return res.status(405).end();

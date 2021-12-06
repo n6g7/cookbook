@@ -30,7 +30,7 @@ export const getStaticPaths = async () => {
   const recipes = await getRecipes();
   return {
     paths: recipes.map(({ id }) => ({ params: { id } })),
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
@@ -39,6 +39,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       recipe: await getRecipe(params.id),
     },
+    revalidate: 45 * 60,
   };
 };
 
