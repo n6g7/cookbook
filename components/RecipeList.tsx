@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import RecipeCard from "./RecipeCard";
 
 export default styled.section`
   display: flex;

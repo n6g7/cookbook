@@ -9,21 +9,22 @@
     "test": "prettier --check '**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@notion-cms/client": "^0.0.11",
-    "@notion-cms/react": "^0.0.11",
-    "@notion-cms/types": "^0.0.11",
-    "next": "^9.3.6",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-modal": "^3.11.2",
-    "styled-components": "^5.1.0"
+    "@notion-cms/client": "^0.1.1",
+    "@notion-cms/react": "^0.1.0",
+    "@notion-cms/types": "^0.1.0",
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-modal": "^3.14.4",
+    "styled-components": "^5.3.3",
+    "swr": "^1.1.0"
   },
   "devDependencies": {
-    "@types/node": "^13.13.5",
-    "@types/react": "^16.9.34",
-    "babel-plugin-styled-components": "^1.10.7",
-    "node-loader": "^0.6.0",
-    "prettier": "^2.0.5",
-    "typescript": "^3.8.3"
+    "@types/node": "^16.11.11",
+    "@types/react": "^17.0.37",
+    "babel-plugin-styled-components": "^2.0.2",
+    "node-loader": "^2.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.2"
   }
 }

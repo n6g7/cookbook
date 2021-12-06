@@ -6,7 +6,7 @@ import HealthLevel from "./HealthLevel";
 import RecipeStats from "./RecipeStats";
 import Button from "./Button";
 import Field from "./Field";
-import { Recipe } from "../data";
+import { RecipeWithBlocks } from "../data";
 import { IngredientsContext } from "../contexts/ingredients";
 
 const Container = styled.article`
@@ -58,7 +58,7 @@ const SectionTitle = styled.h2`
 `;
 
 interface Props {
-  recipe: Recipe;
+  recipe: RecipeWithBlocks;
 }
 
 const RecipeContent: React.FC<Props> = ({ recipe }) => {

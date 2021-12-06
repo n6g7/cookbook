@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Modal from "react-modal";
 import styled from "styled-components";
+import useSWR from "swr";
 
 import { getRecipes, Recipe } from "../data";
 import Hero from "../components/Hero";
@@ -38,12 +39,18 @@ const Anchor = styled.a`
 `;
 
 interface Props {
-  recipe?: Recipe;
   recipes: Recipe[];
 }
 
-const Index: NextPage<Props> = ({ recipe, recipes }) => {
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+const Index: NextPage<Props> = ({ recipes }) => {
   const router = useRouter();
+
+  const { data: recipe, isValidating } = useSWR(
+    router.query.recipeId ? `/api/recipes/${router.query.recipeId}` : null,
+    fetcher
+  );
 
   return (
     <React.Fragment>
@@ -53,7 +60,7 @@ const Index: NextPage<Props> = ({ recipe, recipes }) => {
         contentLabel="Recipe modal"
         style={modalStyles}
       >
-        <RecipeModal recipe={recipe} />
+        {isValidating ? "loading..." : <RecipeModal recipe={recipe} />}
       </Modal>
       <Hero />
       <RecipeList>
