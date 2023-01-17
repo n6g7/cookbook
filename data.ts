@@ -41,10 +41,10 @@ export interface RecipeIngredient extends ParsedPage<RecipeIngredientProps> {}
 
 export const notion = new Notion({ auth: process.env.NOTION_API_TOKEN });
 
-const recipesCollectionId = "4a601862-3c10-45d8-89bd-f2005da64e2c";
-const recipeIngredientsCollectionId = "abbd00ef-9f84-4d36-a3cd-75bff3f90c0d";
-const ingredientsCollectionId = "b14c1273-456d-4baf-93d6-5e7333a5be8e";
-const unitsCollectionId = "3af8b8bf-eb8e-493b-871f-afe19bcd92d0";
+const recipesCollectionId = "db2fb7ff-357a-4c40-a106-b2b33b1662b2";
+const recipeIngredientsCollectionId = "679ede64-a61b-4200-8859-f28d6a63e89b";
+const ingredientsCollectionId = "8687c0bd-9fe9-4690-9108-7a07bbc84e09";
+const unitsCollectionId = "94990f72-24d6-4c36-a2ba-476694369380";
 
 export const getRecipes = (): Promise<Recipe[]> =>
   notion.loadDatabase(recipesCollectionId, {});
