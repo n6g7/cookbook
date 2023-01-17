@@ -43,21 +43,15 @@ const Menu: React.FC = () => {
     <Container>
       <LeftMenu>
         <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
+          <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/recipes">
-            <a>Recipes</a>
-          </Link>
+          <Link href="/recipes">Recipes</Link>
         </li>
       </LeftMenu>
       <RightMenu>
         <li>
-          <Link href="/groceries">
-            <a>Groceries</a>
-          </Link>
+          <Link href="/groceries">Groceries</Link>
         </li>
       </RightMenu>
     </Container>

@@ -69,6 +69,7 @@ const Index: NextPage<Props> = ({ recipes }) => {
             href={`/?recipeId=${recipe.id}`}
             as={`/recipes/${recipe.id}`}
             key={recipe.id}
+            legacyBehavior
           >
             <Anchor>
               <RecipeCard recipe={recipe} />
